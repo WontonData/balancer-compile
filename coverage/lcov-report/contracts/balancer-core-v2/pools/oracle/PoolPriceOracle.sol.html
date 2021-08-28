@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/balancer-core-v2/pools/oracle/PoolPriceOracle.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">contracts/balancer-core-v2/pools/oracle/</a> PoolPriceOracle.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/49</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0-or-later
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+&nbsp;
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+&nbsp;
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+&nbsp;
+pragma solidity ^0.7.0;
+&nbsp;
+import "./Buffer.sol";
+import "./Samples.sol";
+import "../../lib/helpers/BalancerErrors.sol";
+&nbsp;
+import "./IWeightedPoolPriceOracle.sol";
+import "../IPriceOracle.sol";
+&nbsp;
+/**
+ * @dev This module allows Pools to access historical pricing information.
+ *
+ * It uses a 1024 long circular buffer to store past data, where the data within each sample is the result of
+ * accumulating live data for no more than two minutes. Therefore, assuming the worst case scenario where new data is
+ * updated in every single block, the oldest samples in the buffer (and therefore largest queryable period) will
+ * be slightly over 34 hours old.
+ *
+ * Usage of this module requires the caller to keep track of two variables: the latest circular buffer index, and the
+ * timestamp when the index last changed.
+ */
+contract PoolPriceOracle is IWeightedPoolPriceOracle {
+    using Buffer for uint256;
+    using Samples for bytes32;
+&nbsp;
+    // Each sample in the buffer accumulates information for up to 2 minutes. This is simply to reduce the size of the
+    // buffer: small time deviations will not have any significant effect.
+    // solhint-disable not-rely-on-time
+    uint256 private constant _MAX_SAMPLE_DURATION = 2 minutes;
+&nbsp;
+    // We use a mapping to simulate an array: the buffer won't grow or shrink, and since we will always use valid
+    // indexes using a mapping saves gas by skipping the bounds checks.
+    mapping(uint256 =&gt; bytes32) internal _samples;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getSample(uint256 index)</span>
+        external
+        view
+        override
+        returns (
+            int256 logPairPrice,
+            int256 accLogPairPrice,
+            int256 logBptPrice,
+            int256 accLogBptPrice,
+            int256 logInvariant,
+            int256 accLogInvariant,
+            uint256 timestamp
+        )
+    {
+<span class="cstat-no" title="statement not covered" >        _require(index &lt; Buffer.SIZE, Errors.ORACLE_INVALID_INDEX)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        bytes32 sample = _getSample(index);</span>
+<span class="cstat-no" title="statement not covered" >        return sample.unpack();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getTotalSamples() external pure override returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return Buffer.SIZE;</span>
+    }
+&nbsp;
+    /**
+     * @dev Processes new price and invariant data, updating the latest sample or creating a new one.
+     *
+     * Receives the new logarithms of values to store: `logPairPrice`, `logBptPrice` and `logInvariant`, as well the
+     * index of the latest sample and the timestamp of its creation.
+     *
+     * Returns the index of the latest sample. If different from `latestIndex`, the caller should also store the
+     * timestamp, and pass it on future calls to this function.
+     */
+<span class="fstat-no" title="function not covered" >    function _processPriceData(</span>
+        uint256 latestSampleCreationTimestamp,
+        uint256 latestIndex,
+        int256 logPairPrice,
+        int256 logBptPrice,
+        int256 logInvariant
+    ) internal returns (uint256) {
+        // Read latest sample, and compute the next one by updating it with the newly received data.
+<span class="cstat-no" title="statement not covered" >        bytes32 sample = _getSample(latestIndex).update(logPairPrice, logBptPrice, logInvariant, block.timestamp);</span>
+&nbsp;
+        // We create a new sample if more than _MAX_SAMPLE_DURATION seconds have elapsed since the creation of the
+        // latest one. In other words, no sample accumulates data over a period larger than _MAX_SAMPLE_DURATION.
+<span class="cstat-no" title="statement not covered" >        bool newSample = block.timestamp - latestSampleCreationTimestamp &gt;= _MAX_SAMPLE_DURATION;</span>
+<span class="cstat-no" title="statement not covered" >        latestIndex = newSample ? latestIndex.next() : latestIndex</span>;
+&nbsp;
+        // Store the updated or new sample.
+<span class="cstat-no" title="statement not covered" >        _samples[latestIndex] = sample</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return latestIndex;</span>
+    }
+&nbsp;
+    /**
+     * @dev Returns the instant value for `variable` in the sample pointed to by `index`.
+     */
+<span class="fstat-no" title="function not covered" >    function _getInstantValue(IPriceOracle.Variable variable, uint256 index) internal view returns (int256) {</span>
+<span class="cstat-no" title="statement not covered" >        bytes32 sample = _getSample(index);</span>
+<span class="cstat-no" title="statement not covered" >        _require(sample.timestamp() &gt; 0, Errors.ORACLE_NOT_INITIALIZED)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return sample.instant(variable);</span>
+    }
+&nbsp;
+    /**
+     * @dev Returns the value of the accumulator for `variable` `ago` seconds ago. `latestIndex` must be the index of
+     * the latest sample in the buffer.
+     *
+     * Reverts under the following conditions:
+     *  - if the buffer is empty.
+     *  - if querying past information and the buffer has not been fully initialized.
+     *  - if querying older information than available in the buffer. Note that a full buffer guarantees queries for the
+     *    past 34 hours will not revert.
+     *
+     * If requesting information for a timestamp later than the latest one, it is extrapolated using the latest
+     * available data.
+     *
+     * When no exact information is available for the requested past timestamp (as usually happens, since at most one
+     * timestamp is stored every two minutes), it is estimated by performing linear interpolation using the closest
+     * values. This process is guaranteed to complete performing at most 10 storage reads.
+     */
+<span class="fstat-no" title="function not covered" >    function _getPastAccumulator(</span>
+        IPriceOracle.Variable variable,
+        uint256 latestIndex,
+        uint256 ago
+    ) internal view returns (int256) {
+        // `ago` must not be before the epoch.
+<span class="cstat-no" title="statement not covered" >        _require(block.timestamp &gt;= ago, Errors.ORACLE_INVALID_SECONDS_QUERY)</span>;
+<span class="cstat-no" title="statement not covered" >        uint256 lookUpTime = block.timestamp - ago;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        bytes32 latestSample = _getSample(latestIndex);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 latestTimestamp = latestSample.timestamp();</span>
+&nbsp;
+        // The latest sample only has a non-zero timestamp if no data was ever processed and stored in the buffer.
+<span class="cstat-no" title="statement not covered" >        _require(latestTimestamp &gt; 0, Errors.ORACLE_NOT_INITIALIZED)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (latestTimestamp &lt;= lookUpTime) {</span>
+            // The accumulator at times ahead of the latest one are computed by extrapolating the latest data. This is
+            // equivalent to the instant value not changing between the last timestamp and the look up time.
+&nbsp;
+            // We can use unchecked arithmetic since the accumulator can be represented in 53 bits, timestamps in 31
+            // bits, and the instant value in 22 bits.
+<span class="cstat-no" title="statement not covered" >            uint256 elapsed = lookUpTime - latestTimestamp;</span>
+<span class="cstat-no" title="statement not covered" >            return latestSample.accumulator(variable) + (latestSample.instant(variable) * int256(elapsed));</span>
+        } else {
+            // The look up time is before the latest sample, but we need to make sure that it is not before the oldest
+            // sample as well.
+&nbsp;
+            // Since we use a circular buffer, the oldest sample is simply the next one.
+<span class="cstat-no" title="statement not covered" >            uint256 oldestIndex = latestIndex.next();</span>
+            {
+                // Local scope used to prevent stack-too-deep errors.
+<span class="cstat-no" title="statement not covered" >                bytes32 oldestSample = _getSample(oldestIndex);</span>
+<span class="cstat-no" title="statement not covered" >                uint256 oldestTimestamp = oldestSample.timestamp();</span>
+&nbsp;
+                // For simplicity's sake, we only perform past queries if the buffer has been fully initialized. This
+                // means the oldest sample must have a non-zero timestamp.
+<span class="cstat-no" title="statement not covered" >                _require(oldestTimestamp &gt; 0, Errors.ORACLE_NOT_INITIALIZED)</span>;
+                // The only remaining condition to check is for the look up time to be between the oldest and latest
+                // timestamps.
+<span class="cstat-no" title="statement not covered" >                _require(oldestTimestamp &lt;= lookUpTime, Errors.ORACLE_QUERY_TOO_OLD)</span>;
+            }
+&nbsp;
+            // Perform binary search to find nearest samples to the desired timestamp.
+<span class="cstat-no" title="statement not covered" >            (bytes32 prev, bytes32 next) = _findNearestSample(lookUpTime, oldestIndex);</span>
+&nbsp;
+            // `next`'s timestamp is guaranteed to be larger than `prev`'s, so we can skip checked arithmetic.
+<span class="cstat-no" title="statement not covered" >            uint256 samplesTimeDiff = next.timestamp() - prev.timestamp();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (samplesTimeDiff &gt; 0) {</span>
+                // We estimate the accumulator at the requested look up time by interpolating linearly between the
+                // previous and next accumulators.
+&nbsp;
+                // We can use unchecked arithmetic since the accumulators can be represented in 53 bits, and timestamps
+                // in 31 bits.
+<span class="cstat-no" title="statement not covered" >                int256 samplesAccDiff = next.accumulator(variable) - prev.accumulator(variable);</span>
+<span class="cstat-no" title="statement not covered" >                uint256 elapsed = lookUpTime - prev.timestamp();</span>
+<span class="cstat-no" title="statement not covered" >                return prev.accumulator(variable) + ((samplesAccDiff * int256(elapsed)) / int256(samplesTimeDiff));</span>
+            } else {
+                // Rarely, one of the samples will have the exact requested look up time, which is indicated by `prev`
+                // and `next` being the same. In this case, we simply return the accumulator at that point in time.
+<span class="cstat-no" title="statement not covered" >                return prev.accumulator(variable);</span>
+            }
+        }
+    }
+&nbsp;
+    /**
+     * @dev Finds the two samples with timestamps before and after `lookUpDate`. If one of the samples matches exactly,
+     * both `prev` and `next` will be it. `offset` is the index of the oldest sample in the buffer.
+     *
+     * Assumes `lookUpDate` is greater or equal than the timestamp of the oldest sample, and less or equal than the
+     * timestamp of the latest sample.
+     */
+<span class="fstat-no" title="function not covered" >    function _findNearestSample(uint256 lookUpDate, uint256 offset) internal view returns (bytes32 prev, bytes32 next) {</span>
+        // We're going to perform a binary search in the circular buffer, which requires it to be sorted. To achieve
+        // this, we offset all buffer accesses by `offset`, making the first element the oldest one.
+&nbsp;
+        // Auxiliary variables in a typical binary search: we will look at some value `mid` between `low` and `high`,
+        // periodically increasing `low` or decreasing `high` until we either find a match or determine the element is
+        // not in the array.
+<span class="cstat-no" title="statement not covered" >        uint256 low = 0;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 high = Buffer.SIZE - 1;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 mid;</span>
+&nbsp;
+        // If the search fails and no sample has a timestamp of `lookUpDate` (as is the most common scenario), `sample`
+        // will be either the sample with the largest timestamp smaller than `lookUpDate`, or the one with the smallest
+        // timestamp larger than `lookUpDate`.
+<span class="cstat-no" title="statement not covered" >        bytes32 sample;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 sampleTimestamp;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        while (low &lt;= high) {</span>
+            // Mid is the floor of the average.
+<span class="cstat-no" title="statement not covered" >            uint256 midWithoutOffset = (high + low) / 2;</span>
+&nbsp;
+            // Recall that the buffer is not actually sorted: we need to apply the offset to access it in a sorted way.
+<span class="cstat-no" title="statement not covered" >            mid = midWithoutOffset.add(offset)</span>;
+<span class="cstat-no" title="statement not covered" >            sample = _getSample(mid)</span>;
+<span class="cstat-no" title="statement not covered" >            sampleTimestamp = sample.timestamp()</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (sampleTimestamp &lt; lookUpDate) {</span>
+                // If the mid sample is bellow the look up date, then increase the low index to start from there.
+<span class="cstat-no" title="statement not covered" >                low = midWithoutOffset + 1</span>;
+            } else <span class="cstat-no" title="statement not covered" >if (sampleTimestamp &gt; lookUpDate) {</span>
+                // If the mid sample is above the look up date, then decrease the high index to start from there.
+&nbsp;
+                // We can skip checked arithmetic: it is impossible for `high` to ever be 0, as a scenario where `low`
+                // equals 0 and `high` equals 1 would result in `low` increasing to 1 in the previous `if` clause.
+<span class="cstat-no" title="statement not covered" >                high = midWithoutOffset - 1</span>;
+            } else {
+                // sampleTimestamp == lookUpDate
+                // If we have an exact match, return the sample as both `prev` and `next`.
+<span class="cstat-no" title="statement not covered" >                return (sample, sample);</span>
+            }
+        }
+&nbsp;
+        // In case we reach here, it means we didn't find exactly the sample we where looking for.
+<span class="cstat-no" title="statement not covered" >        return sampleTimestamp &lt; lookUpDate ? (sample, _getSample(mid.next())) : (_getSample(mid.prev()), sample);</span>
+    }
+&nbsp;
+    /**
+     * @dev Returns the sample that corresponds to a given `index`.
+     *
+     * Using this function instead of accessing storage directly results in denser bytecode (since the storage slot is
+     * only computed here).
+     */
+<span class="fstat-no" title="function not covered" >    function _getSample(uint256 index) internal view returns (bytes32) {</span>
+<span class="cstat-no" title="statement not covered" >        return _samples[index];</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 28 2021 18:30:55 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

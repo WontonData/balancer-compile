@@ -1,0 +1,2348 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/ConvergentCurvePool.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> ConvergentCurvePool.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/171</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/169</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: Apache-2.0
+pragma solidity ^0.7.0;
+pragma experimental ABIEncoderV2;
+&nbsp;
+import "./interfaces/IERC20Decimals.sol";
+import "./balancer-core-v2/lib/math/LogExpMath.sol";
+import "./balancer-core-v2/lib/math/FixedPoint.sol";
+import "./balancer-core-v2/vault/interfaces/IMinimalSwapInfoPool.sol";
+import "./balancer-core-v2/vault/interfaces/IVault.sol";
+import "./balancer-core-v2/pools/BalancerPoolToken.sol";
+&nbsp;
+contract ConvergentCurvePool is IMinimalSwapInfoPool, BalancerPoolToken {
+    using LogExpMath for uint256;
+    using FixedPoint for uint256;
+&nbsp;
+    // The token we expect to stay constant in value
+    IERC20 public immutable underlying;
+    uint8 public immutable underlyingDecimals;
+    // The token we expect to appreciate to match underlying
+    IERC20 public immutable bond;
+    uint8 public immutable bondDecimals;
+    // The expiration time
+    uint256 public immutable expiration;
+    // The number of seconds in our timescale
+    uint256 public immutable unitSeconds;
+    // The Balancer pool data
+    // Note we change style to match Balancer's custom getter
+    IVault private immutable _vault;
+    bytes32 private immutable _poolId;
+&nbsp;
+    // The fees recorded during swaps. These will be 18 point not token decimal encoded
+    uint128 public feesUnderlying;
+    uint128 public feesBond;
+    // Stored records of governance tokens
+    address public immutable governance;
+    // The percent of each trade's implied yield to collect as LP fee
+    uint256 public immutable percentFee;
+    // The percent of LP fees that is payed to governance
+    uint256 public immutable percentFeeGov;
+&nbsp;
+    // Store constant token indexes for ascending sorted order
+    // In this case despite these being internal it's cleaner
+    // to ignore linting rules that require _
+    /* solhint-disable private-vars-leading-underscore */
+    uint256 internal immutable baseIndex;
+    uint256 internal immutable bondIndex;
+    /* solhint-enable private-vars-leading-underscore */
+&nbsp;
+    // The max percent fee for governance, immutable after compilation
+    uint256 public constant FEE_BOUND = 3e17;
+&nbsp;
+    /// @notice This event allows the frontend to track the fees
+    /// @param collectedBase the base asset tokens fees collected in this txn
+    /// @param collectedBond the bond asset tokens fees collected in this txn
+    /// @param remainingBase the amount of base asset fees have been charged but not collected
+    /// @param remainingBond the amount of bond asset fees have been charged but not collected
+    /// @dev All values emitted by this event are 18 point fixed not token native decimals
+    event FeeCollection(
+        uint256 collectedBase,
+        uint256 collectedBond,
+        uint256 remainingBase,
+        uint256 remainingBond
+    );
+&nbsp;
+    /// @dev We need need to set the immutables on contract creation
+    ///      Note - We expect both 'bond' and 'underlying' to have 'decimals()'
+    /// @param _underlying The asset which the second asset should appreciate to match
+    /// @param _bond The asset which should be appreciating
+    /// @param _expiration The time in unix seconds when the bond asset should equal the underlying asset
+    /// @param _unitSeconds The number of seconds in a unit of time, for example 1 year in seconds
+    /// @param vault The balancer vault
+    /// @param _percentFee The percent each trade's yield to collect as fees
+    /// @param _percentFeeGov The percent of collected that go to governance
+    /// @param _governance The address which gets minted reward lp
+    /// @param name The balancer pool token name
+    /// @param symbol The balancer pool token symbol
+<span class="fstat-no" title="function not covered" >    constructor(</span>
+        IERC20 _underlying,
+        IERC20 _bond,
+        uint256 _expiration,
+        uint256 _unitSeconds,
+        IVault vault,
+        uint256 _percentFee,
+        uint256 _percentFeeGov,
+        address _governance,
+        string memory name,
+        string memory symbol
+    ) BalancerPoolToken(name, symbol) {
+        // Sanity Check
+<span class="cstat-no" title="statement not covered" >        require(_expiration - block.timestamp &lt; _unitSeconds)</span>;
+        // Initialization on the vault
+<span class="cstat-no" title="statement not covered" >        bytes32 poolId = vault.registerPool(</span>
+            IVault.PoolSpecialization.TWO_TOKEN
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        IERC20[] memory tokens = new IERC20[](2);</span>
+<span class="cstat-no" title="statement not covered" >        if (_underlying &lt; _bond) {</span>
+<span class="cstat-no" title="statement not covered" >            tokens[0] = _underlying</span>;
+<span class="cstat-no" title="statement not covered" >            tokens[1] = _bond</span>;
+        } else {
+<span class="cstat-no" title="statement not covered" >            tokens[0] = _bond</span>;
+<span class="cstat-no" title="statement not covered" >            tokens[1] = _underlying</span>;
+        }
+&nbsp;
+        // Pass in zero addresses for Asset Managers
+        // Note - functions below assume this token order
+<span class="cstat-no" title="statement not covered" >        vault.registerTokens(poolId, tokens, new address[](2))</span>;
+&nbsp;
+        // Set immutable state variables
+<span class="cstat-no" title="statement not covered" >        _vault = vault</span>;
+<span class="cstat-no" title="statement not covered" >        _poolId = poolId</span>;
+<span class="cstat-no" title="statement not covered" >        percentFee = _percentFee</span>;
+        // We check that the gov percent fee is less than bound
+<span class="cstat-no" title="statement not covered" >        require(_percentFeeGov &lt; FEE_BOUND, "Fee too high")</span>;
+<span class="cstat-no" title="statement not covered" >        percentFeeGov = _percentFeeGov</span>;
+<span class="cstat-no" title="statement not covered" >        underlying = _underlying</span>;
+<span class="cstat-no" title="statement not covered" >        underlyingDecimals = IERC20Decimals(address(_underlying)).decimals()</span>;
+<span class="cstat-no" title="statement not covered" >        bond = _bond</span>;
+<span class="cstat-no" title="statement not covered" >        bondDecimals = IERC20Decimals(address(_bond)).decimals()</span>;
+<span class="cstat-no" title="statement not covered" >        expiration = _expiration</span>;
+<span class="cstat-no" title="statement not covered" >        unitSeconds = _unitSeconds</span>;
+<span class="cstat-no" title="statement not covered" >        governance = _governance</span>;
+        // Calculate the preset indexes for ordering
+<span class="cstat-no" title="statement not covered" >        bool underlyingFirst = _underlying &lt; _bond;</span>
+<span class="cstat-no" title="statement not covered" >        baseIndex = underlyingFirst ? 0 : 1</span>;
+<span class="cstat-no" title="statement not covered" >        bondIndex = underlyingFirst ? 1 : 0</span>;
+    }
+&nbsp;
+    // Balancer Interface required Getters
+&nbsp;
+    /// @dev Returns the vault for this pool
+    /// @return The vault for this pool
+<span class="fstat-no" title="function not covered" >    function getVault() external view returns (IVault) {</span>
+<span class="cstat-no" title="statement not covered" >        return _vault;</span>
+    }
+&nbsp;
+    /// @dev Returns the poolId for this pool
+    /// @return The poolId for this pool
+<span class="fstat-no" title="function not covered" >    function getPoolId() external view returns (bytes32) {</span>
+<span class="cstat-no" title="statement not covered" >        return _poolId;</span>
+    }
+&nbsp;
+    // Trade Functionality
+&nbsp;
+    /// @dev Called by the Vault on swaps to get a price quote
+    /// @param swapRequest The request which contains the details of the swap
+    /// @param currentBalanceTokenIn The input token balance
+    /// @param currentBalanceTokenOut The output token balance
+    /// @return the amount of the output or input token amount of for swap
+<span class="fstat-no" title="function not covered" >    function onSwap(</span>
+        SwapRequest memory swapRequest,
+        uint256 currentBalanceTokenIn,
+        uint256 currentBalanceTokenOut
+    ) public override returns (uint256) {
+        // Check that the sender is pool, we change state so must make
+        // this check.
+<span class="cstat-no" title="statement not covered" >        require(msg.sender == address(_vault), "Non Vault caller")</span>;
+        // Tokens amounts are passed to us in decimal form of the tokens
+        // But we want theme in 18 point
+<span class="cstat-no" title="statement not covered" >        uint256 amount;</span>
+<span class="cstat-no" title="statement not covered" >        bool isOutputSwap = swapRequest.kind == IVault.SwapKind.GIVEN_IN;</span>
+<span class="cstat-no" title="statement not covered" >        if (isOutputSwap) {</span>
+<span class="cstat-no" title="statement not covered" >            amount = _tokenToFixed(swapRequest.amount, swapRequest.tokenIn)</span>;
+        } else {
+<span class="cstat-no" title="statement not covered" >            amount = _tokenToFixed(swapRequest.amount, swapRequest.tokenOut)</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        currentBalanceTokenIn = _tokenToFixed(</span>
+            currentBalanceTokenIn,
+            swapRequest.tokenIn
+        );
+<span class="cstat-no" title="statement not covered" >        currentBalanceTokenOut = _tokenToFixed(</span>
+            currentBalanceTokenOut,
+            swapRequest.tokenOut
+        );
+&nbsp;
+        // We apply the trick which is used in the paper and
+        // double count the reserves because the curve provisions liquidity
+        // for prices above one underlying per bond, which we don't want to be accessible
+<span class="cstat-no" title="statement not covered" >        (uint256 tokenInReserve, uint256 tokenOutReserve) = _adjustedReserve(</span>
+            currentBalanceTokenIn,
+            swapRequest.tokenIn,
+            currentBalanceTokenOut,
+            swapRequest.tokenOut
+        );
+&nbsp;
+        // We switch on if this is an input or output case
+<span class="cstat-no" title="statement not covered" >        if (isOutputSwap) {</span>
+            // We get quote
+<span class="cstat-no" title="statement not covered" >            uint256 quote = solveTradeInvariant(</span>
+                amount,
+                tokenInReserve,
+                tokenOutReserve,
+                isOutputSwap
+            );
+            // We assign the trade fee
+<span class="cstat-no" title="statement not covered" >            quote = _assignTradeFee(amount, quote, swapRequest.tokenOut, false)</span>;
+            // We return the quote
+<span class="cstat-no" title="statement not covered" >            return _fixedToToken(quote, swapRequest.tokenOut);</span>
+        } else {
+            // We get the quote
+<span class="cstat-no" title="statement not covered" >            uint256 quote = solveTradeInvariant(</span>
+                amount,
+                tokenOutReserve,
+                tokenInReserve,
+                isOutputSwap
+            );
+            // We assign the trade fee
+<span class="cstat-no" title="statement not covered" >            quote = _assignTradeFee(quote, amount, swapRequest.tokenOut, true)</span>;
+            // We return the output
+<span class="cstat-no" title="statement not covered" >            return _fixedToToken(quote, swapRequest.tokenIn);</span>
+        }
+    }
+&nbsp;
+    /// @dev Hook for joining the pool that must be called from the vault.
+    ///      It mints a proportional number of tokens compared to current LP pool,
+    ///      based on the maximum input the user indicates.
+    /// @param poolId The balancer pool id, checked to ensure non erroneous vault call
+    // @param sender Unused by this pool but in interface
+    /// @param recipient The address which will receive lp tokens.
+    /// @param currentBalances The current pool balances, sorted by address low to high.  length 2
+    // @param latestBlockNumberUsed last block number unused in this pool
+    /// @param protocolSwapFee The percent of pool fees to be paid to the Balancer Protocol
+    /// @param userData Abi encoded fixed length 2 array containing max inputs also sorted by
+    ///                 address low to high
+    /// @return amountsIn The actual amounts of token the vault should move to this pool
+    /// @return dueProtocolFeeAmounts The amounts of each token to pay as protocol fees
+<span class="fstat-no" title="function not covered" >    function onJoinPool(</span>
+        bytes32 poolId,
+        address, // sender
+        address recipient,
+        uint256[] memory currentBalances,
+        uint256,
+        uint256 protocolSwapFee,
+        bytes calldata userData
+    )
+        external
+        override
+        returns (
+            uint256[] memory amountsIn,
+            uint256[] memory dueProtocolFeeAmounts
+        )
+    {
+        // Default checks
+<span class="cstat-no" title="statement not covered" >        require(msg.sender == address(_vault), "Non Vault caller")</span>;
+<span class="cstat-no" title="statement not covered" >        require(poolId == _poolId, "Wrong pool id")</span>;
+<span class="cstat-no" title="statement not covered" >        uint256[] memory maxAmountsIn = abi.decode(userData, (uint256[]));</span>
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            currentBalances.length == 2 &amp;&amp; maxAmountsIn.length == 2,
+            "Invalid format"
+        );
+        // We must normalize the inputs to 18 point
+<span class="cstat-no" title="statement not covered" >        _normalizeSortedArray(currentBalances)</span>;
+<span class="cstat-no" title="statement not covered" >        _normalizeSortedArray(maxAmountsIn)</span>;
+&nbsp;
+        // Mint LP to the governance address.
+        // The {} zoning here helps solidity figure out the stack
+        {
+<span class="cstat-no" title="statement not covered" >            (</span>
+                uint256 localFeeUnderlying,
+                uint256 localFeeBond
+            ) = _mintGovernanceLP(currentBalances);
+<span class="cstat-no" title="statement not covered" >            dueProtocolFeeAmounts = new uint256[](2)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            dueProtocolFeeAmounts[baseIndex] = localFeeUnderlying.mulDown(</span>
+                protocolSwapFee
+            );
+<span class="cstat-no" title="statement not covered" >            dueProtocolFeeAmounts[bondIndex] = localFeeBond.mulDown(</span>
+                protocolSwapFee
+            );
+        }
+        // Mint for the user
+<span class="cstat-no" title="statement not covered" >        amountsIn = _mintLP(</span>
+            maxAmountsIn[baseIndex],
+            maxAmountsIn[bondIndex],
+            currentBalances,
+            recipient
+        );
+&nbsp;
+        // We now have make the outputs have the correct decimals
+<span class="cstat-no" title="statement not covered" >        _denormalizeSortedArray(amountsIn)</span>;
+<span class="cstat-no" title="statement not covered" >        _denormalizeSortedArray(dueProtocolFeeAmounts)</span>;
+    }
+&nbsp;
+    /// @dev Hook for leaving the pool that must be called from the vault.
+    ///      It burns a proportional number of tokens compared to current LP pool,
+    ///      based on the minium output the user wants.
+    /// @param poolId The balancer pool id, checked to ensure non erroneous vault call
+    // @param sender Unused by this pool but in interface
+    /// @param recipient The address which will receive the withdraw tokens.
+    /// @param currentBalances The current pool balances, sorted by address low to high.  length 2
+    // @param latestBlockNumberUsed last block number unused in this pool
+    /// @param protocolSwapFee The percent of pool fees to be paid to the Balancer Protocol
+    /// @param userData Abi encoded fixed length 2 array containing min outputs also sorted by
+    ///                 address low to high
+    /// @return amountsOut The number of each token to send to the caller
+    /// @return dueProtocolFeeAmounts The amounts of each token to pay as protocol fees
+<span class="fstat-no" title="function not covered" >    function onExitPool(</span>
+        bytes32 poolId,
+        address,
+        address recipient,
+        uint256[] memory currentBalances,
+        uint256,
+        uint256 protocolSwapFee,
+        bytes calldata userData
+    )
+        external
+        override
+        returns (
+            uint256[] memory amountsOut,
+            uint256[] memory dueProtocolFeeAmounts
+        )
+    {
+        // Default checks
+<span class="cstat-no" title="statement not covered" >        require(msg.sender == address(_vault), "Non Vault caller")</span>;
+<span class="cstat-no" title="statement not covered" >        require(poolId == _poolId, "Wrong pool id")</span>;
+<span class="cstat-no" title="statement not covered" >        uint256[] memory minAmountsOut = abi.decode(userData, (uint256[]));</span>
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            currentBalances.length == 2 &amp;&amp; minAmountsOut.length == 2,
+            "Invalid format"
+        );
+        // We have to convert to 18 decimals
+<span class="cstat-no" title="statement not covered" >        _normalizeSortedArray(currentBalances)</span>;
+<span class="cstat-no" title="statement not covered" >        _normalizeSortedArray(minAmountsOut)</span>;
+&nbsp;
+        // Mint LP for the governance address.
+        // {} zones to help solidity figure out the stack
+        {
+<span class="cstat-no" title="statement not covered" >            (</span>
+                uint256 localFeeUnderlying,
+                uint256 localFeeBond
+            ) = _mintGovernanceLP(currentBalances);
+&nbsp;
+            // Calculate the amount of fees for balancer to collect
+<span class="cstat-no" title="statement not covered" >            dueProtocolFeeAmounts = new uint256[](2)</span>;
+<span class="cstat-no" title="statement not covered" >            dueProtocolFeeAmounts[baseIndex] = localFeeUnderlying.mulDown(</span>
+                protocolSwapFee
+            );
+<span class="cstat-no" title="statement not covered" >            dueProtocolFeeAmounts[bondIndex] = localFeeBond.mulDown(</span>
+                protocolSwapFee
+            );
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        amountsOut = _burnLP(</span>
+            minAmountsOut[baseIndex],
+            minAmountsOut[bondIndex],
+            currentBalances,
+            recipient
+        );
+&nbsp;
+        // We need to convert the balancer outputs to token decimals instead of 18
+<span class="cstat-no" title="statement not covered" >        _denormalizeSortedArray(amountsOut)</span>;
+<span class="cstat-no" title="statement not covered" >        _denormalizeSortedArray(dueProtocolFeeAmounts)</span>;
+<span class="cstat-no" title="statement not covered" >        return (amountsOut, dueProtocolFeeAmounts);</span>
+    }
+&nbsp;
+    /// @dev Returns the balances so that they'll be in the order [underlying, bond].
+    /// @param currentBalances balances sorted low to high of address value.
+<span class="fstat-no" title="function not covered" >    function _getSortedBalances(uint256[] memory currentBalances)</span>
+        internal
+        view
+        returns (uint256 underlyingBalance, uint256 bondBalance)
+    {
+<span class="cstat-no" title="statement not covered" >        return (currentBalances[baseIndex], currentBalances[bondIndex]);</span>
+    }
+&nbsp;
+    /// @dev Turns an array of token amounts into an array of 18 point amounts
+    /// @param data The data to normalize
+<span class="fstat-no" title="function not covered" >    function _normalizeSortedArray(uint256[] memory data) internal view {</span>
+<span class="cstat-no" title="statement not covered" >        data[baseIndex] = _normalize(data[baseIndex], underlyingDecimals, 18)</span>;
+<span class="cstat-no" title="statement not covered" >        data[bondIndex] = _normalize(data[bondIndex], bondDecimals, 18)</span>;
+    }
+&nbsp;
+    /// @dev Turns an array of 18 point amounts into token amounts
+    /// @param data The data to turn in to token decimals
+<span class="fstat-no" title="function not covered" >    function _denormalizeSortedArray(uint256[] memory data) internal view {</span>
+<span class="cstat-no" title="statement not covered" >        data[baseIndex] = _normalize(data[baseIndex], 18, underlyingDecimals)</span>;
+<span class="cstat-no" title="statement not covered" >        data[bondIndex] = _normalize(data[bondIndex], 18, bondDecimals)</span>;
+    }
+&nbsp;
+    // Math libraries and internal routing
+&nbsp;
+    /// @dev Calculates how many tokens should be outputted given an input plus reserve variables
+    ///      Assumes all inputs are in 18 point fixed compatible with the balancer fixed math lib.
+    ///      Since solving for an input is almost exactly the same as an output you can indicate
+    ///      if this is an input or output calculation in the call.
+    /// @param amountX The amount of token x sent in normalized to have 18 decimals
+    /// @param reserveX The amount of the token x currently held by the pool normalized to 18 decimals
+    /// @param reserveY The amount of the token y currently held by the pool normalized to 18 decimals
+    /// @param out Is true if the pool will receive amountX and false if it is expected to produce it.
+    /// @return Either if 'out' is true the amount of Y token to send to the user or
+    ///         if 'out' is false the amount of Y Token to take from the user
+<span class="fstat-no" title="function not covered" >    function solveTradeInvariant(</span>
+        uint256 amountX,
+        uint256 reserveX,
+        uint256 reserveY,
+        bool out
+    ) public view returns (uint256) {
+        // Gets 1 - t
+<span class="cstat-no" title="statement not covered" >        uint256 a = _getYieldExponent();</span>
+        // calculate x before ^ a
+<span class="cstat-no" title="statement not covered" >        uint256 xBeforePowA = LogExpMath.pow(reserveX, a);</span>
+        // calculate y before ^ a
+<span class="cstat-no" title="statement not covered" >        uint256 yBeforePowA = LogExpMath.pow(reserveY, a);</span>
+        // calculate x after ^ a
+<span class="cstat-no" title="statement not covered" >        uint256 xAfterPowA = out</span>
+            ? LogExpMath.pow(reserveX + amountX, a)
+            : LogExpMath.pow(reserveX.sub(amountX), a);
+        // Calculate y_after = ( x_before ^a + y_ before ^a -  x_after^a)^(1/a)
+        // Will revert with underflow here if the liquidity isn't enough for the trade
+<span class="cstat-no" title="statement not covered" >        uint256 yAfter = (xBeforePowA + yBeforePowA).sub(xAfterPowA);</span>
+        // Note that this call is to FixedPoint Div so works as intended
+<span class="cstat-no" title="statement not covered" >        yAfter = LogExpMath.pow(yAfter, uint256(FixedPoint.ONE).divDown(a))</span>;
+        // The amount of Y token to send is (reserveY_before - reserveY_after)
+<span class="cstat-no" title="statement not covered" >        return out ? reserveY.sub(yAfter) : yAfter.sub(reserveY);</span>
+    }
+&nbsp;
+    /// @dev Adds a fee equal to to 'feePercent' of remaining interest to each trade
+    ///      This function accepts both input and output trades, amd expects that all
+    ///      inputs are in fixed 18 point
+    /// @param amountIn The trade's amountIn in fixed 18 point
+    /// @param amountOut The trade's amountOut in fixed 18 point
+    /// @param outputToken The output token
+    /// @param isInputTrade True if the trader is requesting a quote for the amount of input
+    ///                     they need to provide to get 'amountOut' false otherwise
+    /// @return The updated output quote
+    //  Note - The safe math in this function implicitly prevents the price of 'bond' in underlying
+    //         from being higher than 1.
+<span class="fstat-no" title="function not covered" >    function _assignTradeFee(</span>
+        uint256 amountIn,
+        uint256 amountOut,
+        IERC20 outputToken,
+        bool isInputTrade
+    ) internal returns (uint256) {
+        // The math splits on if this is input or output
+<span class="cstat-no" title="statement not covered" >        if (isInputTrade) {</span>
+            // Then it splits again on which token is the bond
+<span class="cstat-no" title="statement not covered" >            if (outputToken == bond) {</span>
+                // If the output is bond the implied yield is out - in
+<span class="cstat-no" title="statement not covered" >                uint256 impliedYieldFee = percentFee.mulDown(</span>
+                    amountOut.sub(amountIn)
+                );
+                // we record that fee collected from the underlying
+<span class="cstat-no" title="statement not covered" >                feesUnderlying += uint128(impliedYieldFee)</span>;
+                // and return the adjusted input quote
+<span class="cstat-no" title="statement not covered" >                return amountIn.add(impliedYieldFee);</span>
+            } else {
+                // If the input token is bond the implied yield is in - out
+<span class="cstat-no" title="statement not covered" >                uint256 impliedYieldFee = percentFee.mulDown(</span>
+                    amountIn.sub(amountOut)
+                );
+                // we record that collected fee from the input bond
+<span class="cstat-no" title="statement not covered" >                feesBond += uint128(impliedYieldFee)</span>;
+                // and return the updated input quote
+<span class="cstat-no" title="statement not covered" >                return amountIn.add(impliedYieldFee);</span>
+            }
+        } else {
+<span class="cstat-no" title="statement not covered" >            if (outputToken == bond) {</span>
+                // If the output is bond the implied yield is out - in
+<span class="cstat-no" title="statement not covered" >                uint256 impliedYieldFee = percentFee.mulDown(</span>
+                    amountOut.sub(amountIn)
+                );
+                // we record that fee collected from the bond output
+<span class="cstat-no" title="statement not covered" >                feesBond += uint128(impliedYieldFee)</span>;
+                // and then return the updated output
+<span class="cstat-no" title="statement not covered" >                return amountOut.sub(impliedYieldFee);</span>
+            } else {
+                // If the output is underlying the implied yield is in - out
+<span class="cstat-no" title="statement not covered" >                uint256 impliedYieldFee = percentFee.mulDown(</span>
+                    amountIn.sub(amountOut)
+                );
+                // we record the collected underlying fee
+<span class="cstat-no" title="statement not covered" >                feesUnderlying += uint128(impliedYieldFee)</span>;
+                // and then return the updated output quote
+<span class="cstat-no" title="statement not covered" >                return amountOut.sub(impliedYieldFee);</span>
+            }
+        }
+    }
+&nbsp;
+    /// @dev Mints the maximum possible LP given a set of max inputs
+    /// @param inputUnderlying The max underlying to deposit
+    /// @param inputBond The max bond to deposit
+    /// @param currentBalances The current pool balances, sorted by address low to high.  length 2
+    /// @param recipient The person who receives the lp funds
+    /// @return amountsIn The actual amounts of token deposited in token sorted order
+<span class="fstat-no" title="function not covered" >    function _mintLP(</span>
+        uint256 inputUnderlying,
+        uint256 inputBond,
+        uint256[] memory currentBalances,
+        address recipient
+    ) internal returns (uint256[] memory amountsIn) {
+        // Initialize the memory array with length
+<span class="cstat-no" title="statement not covered" >        amountsIn = new uint256[](2)</span>;
+        // Passing in in memory array helps stack but we use locals for better names
+<span class="cstat-no" title="statement not covered" >        (uint256 reserveUnderlying, uint256 reserveBond) = _getSortedBalances(</span>
+            currentBalances
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 localTotalSupply = totalSupply();</span>
+        // Check if the pool is initialized
+<span class="cstat-no" title="statement not covered" >        if (localTotalSupply == 0) {</span>
+            // When uninitialized we mint exactly the underlying input
+            // in LP tokens
+<span class="cstat-no" title="statement not covered" >            _mintPoolTokens(recipient, inputUnderlying)</span>;
+            // Return the right data
+<span class="cstat-no" title="statement not covered" >            amountsIn[baseIndex] = inputUnderlying</span>;
+<span class="cstat-no" title="statement not covered" >            amountsIn[bondIndex] = 0</span>;
+<span class="cstat-no" title="statement not covered" >            return (amountsIn);</span>
+        }
+        // Get the reserve ratio, the say how many underlying per bond in the reserve
+        // (input underlying / reserve underlying) is the percent increase caused by deposit
+<span class="cstat-no" title="statement not covered" >        uint256 underlyingPerBond = reserveUnderlying.divDown(reserveBond);</span>
+        // Use the underlying per bond to get the needed number of input underlying
+<span class="cstat-no" title="statement not covered" >        uint256 neededUnderlying = underlyingPerBond.mulDown(inputBond);</span>
+&nbsp;
+        // If the user can't provide enough underlying
+<span class="cstat-no" title="statement not covered" >        if (neededUnderlying &gt; inputUnderlying) {</span>
+            // The increase in total supply is the input underlying
+            // as a ratio to reserve
+<span class="cstat-no" title="statement not covered" >            uint256 mintAmount = (inputUnderlying.mulDown(localTotalSupply))</span>
+                .divDown(reserveUnderlying);
+            // We mint a new amount of as the the percent increase given
+            // by the ratio of the input underlying to the reserve underlying
+<span class="cstat-no" title="statement not covered" >            _mintPoolTokens(recipient, mintAmount)</span>;
+            // In this case we use the whole input of underlying
+            // and consume (inputUnderlying/underlyingPerBond) bonds
+<span class="cstat-no" title="statement not covered" >            amountsIn[baseIndex] = inputUnderlying</span>;
+<span class="cstat-no" title="statement not covered" >            amountsIn[bondIndex] = inputUnderlying.divDown(underlyingPerBond)</span>;
+        } else {
+            // We calculate the percent increase in the reserves from contributing
+            // all of the bond
+<span class="cstat-no" title="statement not covered" >            uint256 mintAmount = (neededUnderlying.mulDown(localTotalSupply))</span>
+                .divDown(reserveUnderlying);
+            // We then mint an amount of pool token which corresponds to that increase
+<span class="cstat-no" title="statement not covered" >            _mintPoolTokens(recipient, mintAmount)</span>;
+            // The indicate we consumed the input bond and (inputBond*underlyingPerBond)
+<span class="cstat-no" title="statement not covered" >            amountsIn[baseIndex] = neededUnderlying</span>;
+<span class="cstat-no" title="statement not covered" >            amountsIn[bondIndex] = inputBond</span>;
+        }
+    }
+&nbsp;
+    /// @dev Burns at least enough LP tokens from the sender to produce
+    ///      as set of minium outputs.
+    /// @param minOutputUnderlying The minimum output in underlying
+    /// @param minOutputBond The minimum output in the bond
+    /// @param currentBalances The current pool balances, sorted by address low to high.  length 2
+    /// @param source The address to burn from.
+    /// @return amountsReleased in address sorted order
+<span class="fstat-no" title="function not covered" >    function _burnLP(</span>
+        uint256 minOutputUnderlying,
+        uint256 minOutputBond,
+        uint256[] memory currentBalances,
+        address source
+    ) internal returns (uint256[] memory amountsReleased) {
+        // Initialize the memory array with length
+<span class="cstat-no" title="statement not covered" >        amountsReleased = new uint256[](2)</span>;
+        // We take in sorted token arrays to help the stack but
+        // use local names to improve readability
+<span class="cstat-no" title="statement not covered" >        (uint256 reserveUnderlying, uint256 reserveBond) = _getSortedBalances(</span>
+            currentBalances
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 localTotalSupply = totalSupply();</span>
+        // Calculate the ratio of the minOutputUnderlying to reserve
+<span class="cstat-no" title="statement not covered" >        uint256 underlyingPerBond = reserveUnderlying.divDown(reserveBond);</span>
+        // If the ratio won't produce enough bond
+<span class="cstat-no" title="statement not covered" >        if (minOutputUnderlying &gt; minOutputBond.mulDown(underlyingPerBond)) {</span>
+            // In this case we burn enough tokens to output 'minOutputUnderlying'
+            // which will be the total supply times the percent of the underlying
+            // reserve which this amount of underlying is.
+<span class="cstat-no" title="statement not covered" >            uint256 burned = (minOutputUnderlying.mulDown(localTotalSupply))</span>
+                .divDown(reserveUnderlying);
+<span class="cstat-no" title="statement not covered" >            _burnPoolTokens(source, burned)</span>;
+            // We return that we released 'minOutputUnderlying' and the number of bonds that
+            // preserves the reserve ratio
+<span class="cstat-no" title="statement not covered" >            amountsReleased[baseIndex] = minOutputUnderlying</span>;
+<span class="cstat-no" title="statement not covered" >            amountsReleased[bondIndex] = minOutputUnderlying.divDown(</span>
+                underlyingPerBond
+            );
+        } else {
+            // Then the amount burned is the ratio of the minOutputBond
+            // to the reserve of bond times the total supply
+<span class="cstat-no" title="statement not covered" >            uint256 burned = (minOutputBond.mulDown(localTotalSupply)).divDown(</span>
+                reserveBond
+            );
+<span class="cstat-no" title="statement not covered" >            _burnPoolTokens(source, burned)</span>;
+            // We return that we released all of the minOutputBond
+            // and the number of underlying which preserves the reserve ratio
+<span class="cstat-no" title="statement not covered" >            amountsReleased[baseIndex] = minOutputBond.mulDown(</span>
+                underlyingPerBond
+            );
+<span class="cstat-no" title="statement not covered" >            amountsReleased[bondIndex] = minOutputBond</span>;
+        }
+    }
+&nbsp;
+    /// @dev Mints LP tokens from a percentage of the stored fees and then updates them
+    /// @param currentBalances The current pool balances, sorted by address low to high.  length 2
+    ///                        expects the inputs to be 18 point fixed
+    /// @return Returns the fee amounts as (feeUnderlying, feeBond) to avoid other sloads
+<span class="fstat-no" title="function not covered" >    function _mintGovernanceLP(uint256[] memory currentBalances)</span>
+        internal
+        returns (uint256, uint256)
+    {
+        // Load and cast the stored fees
+        // Note - Because of sizes should only be one sload
+<span class="cstat-no" title="statement not covered" >        uint256 localFeeUnderlying = uint256(feesUnderlying);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 localFeeBond = uint256(feesBond);</span>
+<span class="cstat-no" title="statement not covered" >        if (percentFeeGov == 0) {</span>
+            // We reset this state because it is expected that this function
+            // resets the amount to match what's consumed and in the zero fee case
+            // that's everything.
+<span class="cstat-no" title="statement not covered" >            (feesUnderlying, feesBond) = (0, 0)</span>;
+            // Emit a fee tracking event
+<span class="cstat-no" title="statement not covered" >            emit FeeCollection(localFeeUnderlying, localFeeBond, 0, 0);</span>
+            // Return the used fees
+<span class="cstat-no" title="statement not covered" >            return (localFeeUnderlying, localFeeBond);</span>
+        }
+&nbsp;
+        // Calculate the gov fee which is the assigned fees times the
+        // percent
+<span class="cstat-no" title="statement not covered" >        uint256 govFeeUnderlying = localFeeUnderlying.mulDown(percentFeeGov);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 govFeeBond = localFeeBond.mulDown(percentFeeGov);</span>
+        // Mint the actual LP for gov address
+<span class="cstat-no" title="statement not covered" >        uint256[] memory consumed = _mintLP(</span>
+            govFeeUnderlying,
+            govFeeBond,
+            currentBalances,
+            governance
+        );
+        // We calculate the actual fees used
+<span class="cstat-no" title="statement not covered" >        uint256 usedFeeUnderlying = (consumed[baseIndex]).divDown(</span>
+            percentFeeGov
+        );
+<span class="cstat-no" title="statement not covered" >        uint256 usedFeeBond = (consumed[bondIndex]).divDown(percentFeeGov);</span>
+        // Calculate the remaining fees, note due to rounding errors they are likely to
+        // be true that usedFees + remainingFees &gt; originalFees by a very small rounding error
+        // this is safe as with a bounded gov fee it never consumes LP funds.
+<span class="cstat-no" title="statement not covered" >        uint256 remainingUnderlying = govFeeUnderlying</span>
+            .sub(consumed[baseIndex])
+            .divDown(percentFeeGov);
+<span class="cstat-no" title="statement not covered" >        uint256 remainingBond = govFeeBond.sub(consumed[bondIndex]).divDown(</span>
+            percentFeeGov
+        );
+        // Emit fee tracking event
+<span class="cstat-no" title="statement not covered" >        emit FeeCollection(</span>
+            usedFeeUnderlying,
+            usedFeeBond,
+            remainingUnderlying,
+            remainingBond
+        );
+        // Store the remaining fees
+<span class="cstat-no" title="statement not covered" >        feesUnderlying = uint128(remainingUnderlying)</span>;
+<span class="cstat-no" title="statement not covered" >        feesBond = uint128(remainingBond)</span>;
+        // We return the fees which were removed from storage
+<span class="cstat-no" title="statement not covered" >        return (usedFeeUnderlying, usedFeeBond);</span>
+    }
+&nbsp;
+    /// @dev Calculates 1 - t
+    /// @return Returns 1 - t, encoded as a fraction in 18 decimal fixed point
+<span class="fstat-no" title="function not covered" >    function _getYieldExponent() internal virtual view returns (uint256) {</span>
+        // The fractional time
+<span class="cstat-no" title="statement not covered" >        uint256 timeTillExpiry = block.timestamp &lt; expiration</span>
+            ? expiration - block.timestamp
+            : 0;
+<span class="cstat-no" title="statement not covered" >        timeTillExpiry *= 1e18</span>;
+        // timeTillExpiry now contains the a fixed point of the years remaining
+<span class="cstat-no" title="statement not covered" >        timeTillExpiry = timeTillExpiry.divDown(unitSeconds * 1e18)</span>;
+<span class="cstat-no" title="statement not covered" >        uint256 result = uint256(FixedPoint.ONE).sub(timeTillExpiry);</span>
+        // Sanity Check
+<span class="cstat-no" title="statement not covered" >        require(result != 0)</span>;
+        // Return result
+<span class="cstat-no" title="statement not covered" >        return result;</span>
+    }
+&nbsp;
+    /// @dev Applies the reserve adjustment from the paper and returns the reserves
+    ///      Note: The inputs should be in 18 point fixed to match the LP decimals
+    /// @param reserveTokenIn The reserve of the input token
+    /// @param tokenIn The address of the input token
+    /// @param reserveTokenOut The reserve of the output token
+    /// @return Returns (adjustedReserveIn, adjustedReserveOut)
+<span class="fstat-no" title="function not covered" >    function _adjustedReserve(</span>
+        uint256 reserveTokenIn,
+        IERC20 tokenIn,
+        uint256 reserveTokenOut,
+        IERC20 tokenOut
+    ) internal view returns (uint256, uint256) {
+        // We need to identify the bond asset and the underlying
+        // This check is slightly redundant in most cases but more secure
+<span class="cstat-no" title="statement not covered" >        if (tokenIn == underlying &amp;&amp; tokenOut == bond) {</span>
+            // We return (underlyingReserve, bondReserve + totalLP)
+<span class="cstat-no" title="statement not covered" >            return (reserveTokenIn, reserveTokenOut + totalSupply());</span>
+        } else <span class="cstat-no" title="statement not covered" >if (tokenIn == bond &amp;&amp; tokenOut == underlying) {</span>
+            // We return (bondReserve + totalLP, underlyingReserve)
+<span class="cstat-no" title="statement not covered" >            return (reserveTokenIn + totalSupply(), reserveTokenOut);</span>
+        }
+        // This should never be hit
+<span class="cstat-no" title="statement not covered" >        revert("Token request doesn't match stored")</span>;
+    }
+&nbsp;
+    /// @dev Turns a token which is either 'bond' or 'underlying' into 18 point decimal
+    /// @param amount The amount of the token in native decimal encoding
+    /// @param token The address of the token
+    /// @return The amount of token encoded into 18 point fixed point
+<span class="fstat-no" title="function not covered" >    function _tokenToFixed(uint256 amount, IERC20 token)</span>
+        internal
+        view
+        returns (uint256)
+    {
+        // In both cases we are targeting 18 point
+<span class="cstat-no" title="statement not covered" >        if (token == underlying) {</span>
+<span class="cstat-no" title="statement not covered" >            return _normalize(amount, underlyingDecimals, 18);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (token == bond) {</span>
+<span class="cstat-no" title="statement not covered" >            return _normalize(amount, bondDecimals, 18);</span>
+        }
+        // Should never happen
+<span class="cstat-no" title="statement not covered" >        revert("Called with non pool token")</span>;
+    }
+&nbsp;
+    /// @dev Turns an 18 fixed point amount into a token amount
+    ///       Token must be either 'bond' or 'underlying'
+    /// @param amount The amount of the token in 18 decimal fixed point
+    /// @param token The address of the token
+    /// @return The amount of token encoded in native decimal point
+<span class="fstat-no" title="function not covered" >    function _fixedToToken(uint256 amount, IERC20 token)</span>
+        internal
+        view
+        returns (uint256)
+    {
+<span class="cstat-no" title="statement not covered" >        if (token == underlying) {</span>
+            // Recodes to 'underlyingDecimals' decimals
+<span class="cstat-no" title="statement not covered" >            return _normalize(amount, 18, underlyingDecimals);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (token == bond) {</span>
+            // Recodes to 'bondDecimals' decimals
+<span class="cstat-no" title="statement not covered" >            return _normalize(amount, 18, bondDecimals);</span>
+        }
+        // Should never happen
+<span class="cstat-no" title="statement not covered" >        revert("Called with non pool token")</span>;
+    }
+&nbsp;
+    /// @dev Takes an 'amount' encoded with 'decimalsBefore' decimals and
+    ///      re encodes it with 'decimalsAfter' decimals
+    /// @param amount The amount to normalize
+    /// @param decimalsBefore The decimal encoding before
+    /// @param decimalsAfter The decimal encoding after
+<span class="fstat-no" title="function not covered" >    function _normalize(</span>
+        uint256 amount,
+        uint8 decimalsBefore,
+        uint8 decimalsAfter
+    ) internal pure returns (uint256) {
+        // If we need to increase the decimals
+<span class="cstat-no" title="statement not covered" >        if (decimalsBefore &gt; decimalsAfter) {</span>
+            // Then we shift right the amount by the number of decimals
+<span class="cstat-no" title="statement not covered" >            amount = amount / 10**(decimalsBefore - decimalsAfter)</span>;
+            // If we need to decrease the number
+        } else <span class="cstat-no" title="statement not covered" >if (decimalsBefore &lt; decimalsAfter) {</span>
+            // then we shift left by the difference
+<span class="cstat-no" title="statement not covered" >            amount = amount * 10**(decimalsAfter - decimalsBefore)</span>;
+        }
+        // If nothing changed this is a no-op
+<span class="cstat-no" title="statement not covered" >        return amount;</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 28 2021 18:30:55 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

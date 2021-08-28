@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/balancer-core-v2/lib/helpers/WordCodec.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">contracts/balancer-core-v2/lib/helpers/</a> WordCodec.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/21</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0-or-later
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+&nbsp;
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+&nbsp;
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+&nbsp;
+pragma solidity ^0.7.0;
+&nbsp;
+/**
+ * @dev Library for encoding and decoding values stored inside a 256 bit word. Typically used to pack multiple values in
+ * a single storage slot, saving gas by performing less storage accesses.
+ *
+ * Each value is defined by its size and the least significant bit in the word, also known as offset. For example, two
+ * 128 bit values may be encoded in a word by assigning one an offset of 0, and the other an offset of 128.
+ */
+library WordCodec {
+    // Masks are values with the least significant N bits set. They can be used to extract an encoded value from a word,
+    // or to insert a new one replacing the old.
+    uint256 private constant _MASK_1 = 2**(1) - 1;
+    uint256 private constant _MASK_10 = 2**(10) - 1;
+    uint256 private constant _MASK_22 = 2**(22) - 1;
+    uint256 private constant _MASK_31 = 2**(31) - 1;
+    uint256 private constant _MASK_53 = 2**(53) - 1;
+    uint256 private constant _MASK_64 = 2**(64) - 1;
+&nbsp;
+    // Largest positive values that can be represented as N bits signed integers.
+    int256 private constant _MAX_INT_22 = 2**(21) - 1;
+    int256 private constant _MAX_INT_53 = 2**(52) - 1;
+&nbsp;
+    // In-place insertion
+&nbsp;
+    /**
+     * @dev Inserts a boolean value shifted by an offset into a 256 bit word, replacing the old value. Returns the new
+     * word.
+     */
+<span class="fstat-no" title="function not covered" >    function insertBoolean(</span>
+        bytes32 word,
+        bool value,
+        uint256 offset
+    ) internal pure returns (bytes32) {
+<span class="cstat-no" title="statement not covered" >        bytes32 clearedWord = bytes32(uint256(word) &amp; ~(_MASK_1 &lt;&lt; offset));</span>
+<span class="cstat-no" title="statement not covered" >        return clearedWord | bytes32(uint256(value ? 1 : 0) &lt;&lt; offset);</span>
+    }
+&nbsp;
+    // Unsigned
+&nbsp;
+    /**
+     * @dev Inserts a 10 bit unsigned integer shifted by an offset into a 256 bit word, replacing the old value. Returns
+     * the new word.
+     *
+     * Assumes `value` can be represented using 10 bits.
+     */
+<span class="fstat-no" title="function not covered" >    function insertUint10(</span>
+        bytes32 word,
+        uint256 value,
+        uint256 offset
+    ) internal pure returns (bytes32) {
+<span class="cstat-no" title="statement not covered" >        bytes32 clearedWord = bytes32(uint256(word) &amp; ~(_MASK_10 &lt;&lt; offset));</span>
+<span class="cstat-no" title="statement not covered" >        return clearedWord | bytes32(value &lt;&lt; offset);</span>
+    }
+&nbsp;
+    /**
+     * @dev Inserts a 31 bit unsigned integer shifted by an offset into a 256 bit word, replacing the old value. Returns
+     * the new word.
+     *
+     * Assumes `value` can be represented using 31 bits.
+     */
+<span class="fstat-no" title="function not covered" >    function insertUint31(</span>
+        bytes32 word,
+        uint256 value,
+        uint256 offset
+    ) internal pure returns (bytes32) {
+<span class="cstat-no" title="statement not covered" >        bytes32 clearedWord = bytes32(uint256(word) &amp; ~(_MASK_31 &lt;&lt; offset));</span>
+<span class="cstat-no" title="statement not covered" >        return clearedWord | bytes32(value &lt;&lt; offset);</span>
+    }
+&nbsp;
+    /**
+     * @dev Inserts a 64 bit unsigned integer shifted by an offset into a 256 bit word, replacing the old value. Returns
+     * the new word.
+     *
+     * Assumes `value` can be represented using 64 bits.
+     */
+<span class="fstat-no" title="function not covered" >    function insertUint64(</span>
+        bytes32 word,
+        uint256 value,
+        uint256 offset
+    ) internal pure returns (bytes32) {
+<span class="cstat-no" title="statement not covered" >        bytes32 clearedWord = bytes32(uint256(word) &amp; ~(_MASK_64 &lt;&lt; offset));</span>
+<span class="cstat-no" title="statement not covered" >        return clearedWord | bytes32(value &lt;&lt; offset);</span>
+    }
+&nbsp;
+    // Signed
+&nbsp;
+    /**
+     * @dev Inserts a 22 bits signed integer shifted by an offset into a 256 bit word, replacing the old value. Returns
+     * the new word.
+     *
+     * Assumes `value` can be represented using 22 bits.
+     */
+<span class="fstat-no" title="function not covered" >    function insertInt22(</span>
+        bytes32 word,
+        int256 value,
+        uint256 offset
+    ) internal pure returns (bytes32) {
+<span class="cstat-no" title="statement not covered" >        bytes32 clearedWord = bytes32(uint256(word) &amp; ~(_MASK_22 &lt;&lt; offset));</span>
+        // Integer values need masking to remove the upper bits of negative values.
+<span class="cstat-no" title="statement not covered" >        return clearedWord | bytes32((uint256(value) &amp; _MASK_22) &lt;&lt; offset);</span>
+    }
+&nbsp;
+    // Encoding
+&nbsp;
+    // Unsigned
+&nbsp;
+    /**
+     * @dev Encodes a 31 bit unsigned integer shifted by an offset.
+     *
+     * The return value can be logically ORed with other encoded values to form a 256 bit word.
+     */
+<span class="fstat-no" title="function not covered" >    function encodeUint31(uint256 value, uint256 offset) internal pure returns (bytes32) {</span>
+<span class="cstat-no" title="statement not covered" >        return bytes32(value &lt;&lt; offset);</span>
+    }
+&nbsp;
+    // Signed
+&nbsp;
+    /**
+     * @dev Encodes a 22 bits signed integer shifted by an offset.
+     *
+     * The return value can be logically ORed with other encoded values to form a 256 bit word.
+     */
+<span class="fstat-no" title="function not covered" >    function encodeInt22(int256 value, uint256 offset) internal pure returns (bytes32) {</span>
+        // Integer values need masking to remove the upper bits of negative values.
+<span class="cstat-no" title="statement not covered" >        return bytes32((uint256(value) &amp; _MASK_22) &lt;&lt; offset);</span>
+    }
+&nbsp;
+    /**
+     * @dev Encodes a 53 bits signed integer shifted by an offset.
+     *
+     * The return value can be logically ORed with other encoded values to form a 256 bit word.
+     */
+<span class="fstat-no" title="function not covered" >    function encodeInt53(int256 value, uint256 offset) internal pure returns (bytes32) {</span>
+        // Integer values need masking to remove the upper bits of negative values.
+<span class="cstat-no" title="statement not covered" >        return bytes32((uint256(value) &amp; _MASK_53) &lt;&lt; offset);</span>
+    }
+&nbsp;
+    // Decoding
+&nbsp;
+    /**
+     * @dev Decodes and returns a boolean shifted by an offset from a 256 bit word.
+     */
+<span class="fstat-no" title="function not covered" >    function decodeBool(bytes32 word, uint256 offset) internal pure returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >        return (uint256(word &gt;&gt; offset) &amp; _MASK_1) == 1;</span>
+    }
+&nbsp;
+    // Unsigned
+&nbsp;
+    /**
+     * @dev Decodes and returns a 10 bit unsigned integer shifted by an offset from a 256 bit word.
+     */
+<span class="fstat-no" title="function not covered" >    function decodeUint10(bytes32 word, uint256 offset) internal pure returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return uint256(word &gt;&gt; offset) &amp; _MASK_10;</span>
+    }
+&nbsp;
+    /**
+     * @dev Decodes and returns a 31 bit unsigned integer shifted by an offset from a 256 bit word.
+     */
+<span class="fstat-no" title="function not covered" >    function decodeUint31(bytes32 word, uint256 offset) internal pure returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return uint256(word &gt;&gt; offset) &amp; _MASK_31;</span>
+    }
+&nbsp;
+    /**
+     * @dev Decodes and returns a 64 bit unsigned integer shifted by an offset from a 256 bit word.
+     */
+<span class="fstat-no" title="function not covered" >    function decodeUint64(bytes32 word, uint256 offset) internal pure returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return uint256(word &gt;&gt; offset) &amp; _MASK_64;</span>
+    }
+&nbsp;
+    // Signed
+&nbsp;
+    /**
+     * @dev Decodes and returns a 22 bits signed integer shifted by an offset from a 256 bit word.
+     */
+<span class="fstat-no" title="function not covered" >    function decodeInt22(bytes32 word, uint256 offset) internal pure returns (int256) {</span>
+<span class="cstat-no" title="statement not covered" >        int256 value = int256(uint256(word &gt;&gt; offset) &amp; _MASK_22);</span>
+        // In case the decoded value is greater than the max positive integer that can be represented with 22 bits,
+        // we know it was originally a negative integer. Therefore, we mask it to restore the sign in the 256 bit
+        // representation.
+<span class="cstat-no" title="statement not covered" >        return value &gt; _MAX_INT_22 ? (value | int256(~_MASK_22)) : value;</span>
+    }
+&nbsp;
+    /**
+     * @dev Decodes and returns a 53 bits signed integer shifted by an offset from a 256 bit word.
+     */
+<span class="fstat-no" title="function not covered" >    function decodeInt53(bytes32 word, uint256 offset) internal pure returns (int256) {</span>
+<span class="cstat-no" title="statement not covered" >        int256 value = int256(uint256(word &gt;&gt; offset) &amp; _MASK_53);</span>
+        // In case the decoded value is greater than the max positive integer that can be represented with 53 bits,
+        // we know it was originally a negative integer. Therefore, we mask it to restore the sign in the 256 bit
+        // representation.
+<span class="cstat-no" title="statement not covered" >        return value &gt; _MAX_INT_53 ? (value | int256(~_MASK_53)) : value;</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 28 2021 18:30:55 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

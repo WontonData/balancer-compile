@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/factories/ConvergentPoolFactory.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/factories/</a> ConvergentPoolFactory.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/10</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: Apache-2.0
+pragma solidity ^0.7.0;
+&nbsp;
+import "../balancer-core-v2/pools/factories/BasePoolFactory.sol";
+import "../libraries/Authorizable.sol";
+import "../ConvergentCurvePool.sol";
+&nbsp;
+/// @author Element Finance
+/// @title Convergent Pool Factory
+contract ConvergentPoolFactory is BasePoolFactory, Authorizable {
+    // This contract deploys convergent pools
+&nbsp;
+    // The 18 point encoded percent fee paid to governance by the pool
+    // Defaults to 0 and must be enabled by governance
+    uint256 public percentFeeGov;
+    address public governance;
+&nbsp;
+    /// @notice This event tracks pool creations from this factory
+    /// @param pool the address of the pool
+    /// @param bondToken The token of the bond token in this pool
+    event CCPoolCreated(address indexed pool, address indexed bondToken);
+&nbsp;
+    /// @notice This function constructs the pool
+    /// @param _vault The balancer v2 vault
+    /// @param _governance The governance address
+<span class="fstat-no" title="function not covered" >    constructor(IVault _vault, address _governance)</span>
+        BasePoolFactory(_vault)
+        Authorizable()
+    {
+        // Sets the governance address as owner and authorized
+<span class="cstat-no" title="statement not covered" >        _authorize(_governance)</span>;
+<span class="cstat-no" title="statement not covered" >        setOwner(_governance)</span>;
+<span class="cstat-no" title="statement not covered" >        governance = _governance</span>;
+    }
+&nbsp;
+    /// @notice Deploys a new `ConvergentPool`.
+    /// @param _underlying The asset which is converged to ie 'base'
+    /// @param _bond The asset which converges to the underlying
+    /// @param _expiration The time at which convergence finishes
+    /// @param _unitSeconds The unit seconds multiplier for time
+    /// @param _percentFee The fee percent of each trades implied yield paid to gov.
+    /// @param _name The name of the balancer v2 lp token for this pool
+    /// @param _symbol The symbol of the balancer v2 lp token for this pool
+    /// @return The new pool address
+<span class="fstat-no" title="function not covered" >    function create(</span>
+        address _underlying,
+        address _bond,
+        uint256 _expiration,
+        uint256 _unitSeconds,
+        uint256 _percentFee,
+        string memory _name,
+        string memory _symbol
+    ) external returns (address) {
+<span class="cstat-no" title="statement not covered" >        address pool = address(</span>
+            new ConvergentCurvePool(
+                IERC20(_underlying),
+                IERC20(_bond),
+                _expiration,
+                _unitSeconds,
+                getVault(),
+                _percentFee,
+                percentFeeGov,
+                governance,
+                _name,
+                _symbol
+            )
+        );
+        // Register the pool with the vault
+<span class="cstat-no" title="statement not covered" >        _register(pool)</span>;
+        // Emit a creation event
+<span class="cstat-no" title="statement not covered" >        emit CCPoolCreated(pool, _bond);</span>
+<span class="cstat-no" title="statement not covered" >        return pool;</span>
+    }
+&nbsp;
+    /// @notice Allows governance to set the new percent fee for governance
+    /// @param newFee The new percentage fee
+<span class="fstat-no" title="function not covered" >    function setGovFee(uint256 newFee) external onlyAuthorized() {</span>
+<span class="cstat-no" title="statement not covered" >        require(newFee &lt; 3e17, "New fee higher than 30%")</span>;
+<span class="cstat-no" title="statement not covered" >        percentFeeGov = newFee</span>;
+    }
+&nbsp;
+    /// @notice Allows the owner to change the governance minting address
+    /// @param newGov The new address to receive rewards in pools
+<span class="fstat-no" title="function not covered" >    function setGov(address newGov) external onlyOwner() {</span>
+<span class="cstat-no" title="statement not covered" >        governance = newGov</span>;
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 28 2021 18:30:55 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

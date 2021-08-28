@@ -4198,6 +4198,167 @@
       "artifacts": [
         "WeightedPoolFactory"
       ]
+    },
+    "/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/ConvergentCurvePool.sol": {
+      "lastModificationDate": 1630146171175,
+      "contentHash": "4ee28acd778387ed7f5adc8ef3daf3a6",
+      "sourceName": "contracts/ConvergentCurvePool.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IERC20Decimals.sol",
+        "./balancer-core-v2/lib/math/LogExpMath.sol",
+        "./balancer-core-v2/lib/math/FixedPoint.sol",
+        "./balancer-core-v2/vault/interfaces/IMinimalSwapInfoPool.sol",
+        "./balancer-core-v2/vault/interfaces/IVault.sol",
+        "./balancer-core-v2/pools/BalancerPoolToken.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "ConvergentCurvePool"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/interfaces/IERC20Decimals.sol": {
+      "lastModificationDate": 1630146468560,
+      "contentHash": "359aa4616765f9ed51e0a19093860dfe",
+      "sourceName": "contracts/interfaces/IERC20Decimals.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../balancer-core-v2/lib/openzeppelin/ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0"
+      ],
+      "artifacts": [
+        "IERC20Decimals"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/factories/ConvergentPoolFactory.sol": {
+      "lastModificationDate": 1630146237563,
+      "contentHash": "df8a930cc7cf85df14cb4da885067246",
+      "sourceName": "contracts/factories/ConvergentPoolFactory.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../balancer-core-v2/pools/factories/BasePoolFactory.sol",
+        "../libraries/Authorizable.sol",
+        "../ConvergentCurvePool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "ConvergentPoolFactory"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/libraries/Authorizable.sol": {
+      "lastModificationDate": 1630146464773,
+      "contentHash": "bd1824067b7a0f327ef9bc2588093f0d",
+      "sourceName": "contracts/libraries/Authorizable.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 7500
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0"
+      ],
+      "artifacts": [
+        "Authorizable"
+      ]
     }
   }
 }
