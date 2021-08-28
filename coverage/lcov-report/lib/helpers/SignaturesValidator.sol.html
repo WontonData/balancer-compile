@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/helpers/SignaturesValidator.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">lib/helpers/</a> SignaturesValidator.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/23</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0-or-later
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+&nbsp;
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+&nbsp;
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+&nbsp;
+pragma solidity ^0.7.0;
+&nbsp;
+import "./BalancerErrors.sol";
+import "./ISignaturesValidator.sol";
+import "../openzeppelin/EIP712.sol";
+&nbsp;
+/**
+ * @dev Utility for signing Solidity function calls.
+ *
+ * This contract relies on the fact that Solidity contracts can be called with extra calldata, and enables
+ * meta-transaction schemes by appending an EIP712 signature of the original calldata at the end.
+ *
+ * Derived contracts must implement the `_typeHash` function to map function selectors to EIP712 structs.
+ */
+abstract contract SignaturesValidator is ISignaturesValidator, EIP712 {
+    // The appended data consists of a deadline, plus the [v,r,s] signature. For simplicity, we use a full 256 bit slot
+    // for each of these values, even if 'v' is typically an 8 bit value.
+    uint256 internal constant _EXTRA_CALLDATA_LENGTH = 4 * 32;
+&nbsp;
+    // Replay attack prevention for each user.
+    mapping(address =&gt; uint256) internal _nextNonce;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    constructor(string memory name) EIP712(name, "1") {</span>
+        // solhint-disable-previous-line no-empty-blocks
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getDomainSeparator() external view override returns (bytes32) {</span>
+<span class="cstat-no" title="statement not covered" >        return _domainSeparatorV4();</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getNextNonce(address user) external view override returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return _nextNonce[user];</span>
+    }
+&nbsp;
+    /**
+     * @dev Reverts with `errorCode` unless a valid signature for `user` was appended to the calldata.
+     */
+<span class="fstat-no" title="function not covered" >    function _validateSignature(address user, uint256 errorCode) internal {</span>
+<span class="cstat-no" title="statement not covered" >        uint256 nextNonce = _nextNonce[user]++;</span>
+<span class="cstat-no" title="statement not covered" >        _require(_isSignatureValid(user, nextNonce), errorCode)</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function _isSignatureValid(address user, uint256 nonce) private view returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >        uint256 deadline = _deadline();</span>
+&nbsp;
+        // The deadline is timestamp-based: it should not be relied upon for sub-minute accuracy.
+        // solhint-disable-next-line not-rely-on-time
+<span class="cstat-no" title="statement not covered" >        if (deadline &lt; block.timestamp) {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        bytes32 typeHash = _typeHash();</span>
+<span class="cstat-no" title="statement not covered" >        if (typeHash == bytes32(0)) {</span>
+            // Prevent accidental signature validation for functions that don't have an associated type hash.
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+&nbsp;
+        // All type hashes have this format: (bytes calldata, address sender, uint256 nonce, uint256 deadline).
+<span class="cstat-no" title="statement not covered" >        bytes32 structHash = keccak256(abi.encode(typeHash, keccak256(_calldata()), msg.sender, nonce, deadline));</span>
+<span class="cstat-no" title="statement not covered" >        bytes32 digest = _hashTypedDataV4(structHash);</span>
+<span class="cstat-no" title="statement not covered" >        (uint8 v, bytes32 r, bytes32 s) = _signature();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        address recoveredAddress = ecrecover(digest, v, r, s);</span>
+&nbsp;
+        // ecrecover returns the zero address on recover failure, so we need to handle that explicitly.
+<span class="cstat-no" title="statement not covered" >        return recoveredAddress != address(0) &amp;&amp; recoveredAddress == user;</span>
+    }
+&nbsp;
+    /**
+     * @dev Returns the EIP712 type hash for the current entry point function, which can be identified by its function
+     * selector (available as `msg.sig`).
+     *
+     * The type hash must conform to the following format:
+     *  &lt;name&gt;(bytes calldata, address sender, uint256 nonce, uint256 deadline)
+     *
+     * If 0x00, all signatures will be considered invalid.
+     */
+    function _typeHash() internal view virtual returns (bytes32);
+&nbsp;
+    /**
+     * @dev Extracts the signature deadline from extra calldata.
+     *
+     * This function returns bogus data if no signature is included.
+     */
+<span class="fstat-no" title="function not covered" >    function _deadline() internal pure returns (uint256) {</span>
+        // The deadline is the first extra argument at the end of the original calldata.
+<span class="cstat-no" title="statement not covered" >        return uint256(_decodeExtraCalldataWord(0));</span>
+    }
+&nbsp;
+    /**
+     * @dev Extracts the signature parameters from extra calldata.
+     *
+     * This function returns bogus data if no signature is included. This is not a security risk, as that data would not
+     * be considered a valid signature in the first place.
+     */
+<span class="fstat-no" title="function not covered" >    function _signature()</span>
+        internal
+        pure
+        returns (
+            uint8 v,
+            bytes32 r,
+            bytes32 s
+        )
+    {
+        // v, r and s are appended after the signature deadline, in that order.
+<span class="cstat-no" title="statement not covered" >        v = uint8(uint256(_decodeExtraCalldataWord(0x20)))</span>;
+<span class="cstat-no" title="statement not covered" >        r = _decodeExtraCalldataWord(0x40)</span>;
+<span class="cstat-no" title="statement not covered" >        s = _decodeExtraCalldataWord(0x60)</span>;
+    }
+&nbsp;
+    /**
+     * @dev Returns the original calldata, without the extra bytes containing the signature.
+     *
+     * This function returns bogus data if no signature is included.
+     */
+<span class="fstat-no" title="function not covered" >    function _calldata() internal pure returns (bytes memory result) {</span>
+<span class="cstat-no" title="statement not covered" >        result = msg.data</span>; // A calldata to memory assignment results in memory allocation and copy of contents.
+<span class="cstat-no" title="statement not covered" >        if (result.length &gt; _EXTRA_CALLDATA_LENGTH) {</span>
+            // solhint-disable-next-line no-inline-assembly
+            assembly {
+                // We simply overwrite the array length with the reduced one.
+                mstore(result, sub(calldatasize(), _EXTRA_CALLDATA_LENGTH))
+            }
+        }
+    }
+&nbsp;
+    /**
+     * @dev Returns a 256 bit word from 'extra' calldata, at some offset from the expected end of the original calldata.
+     *
+     * This function returns bogus data if no signature is included.
+     */
+<span class="fstat-no" title="function not covered" >    function _decodeExtraCalldataWord(uint256 offset) private pure returns (bytes32 result) {</span>
+        // solhint-disable-next-line no-inline-assembly
+        assembly {
+            result := calldataload(add(sub(calldatasize(), _EXTRA_CALLDATA_LENGTH), offset))
+        }
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 28 2021 15:51:37 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

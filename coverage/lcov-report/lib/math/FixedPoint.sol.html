@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/math/FixedPoint.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">lib/math/</a> FixedPoint.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/35</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0-or-later
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+&nbsp;
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+&nbsp;
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+&nbsp;
+pragma solidity ^0.7.0;
+&nbsp;
+import "./LogExpMath.sol";
+import "../helpers/BalancerErrors.sol";
+&nbsp;
+/* solhint-disable private-vars-leading-underscore */
+&nbsp;
+library FixedPoint {
+    uint256 internal constant ONE = 1e18; // 18 decimal places
+    uint256 internal constant MAX_POW_RELATIVE_ERROR = 10000; // 10^(-14)
+&nbsp;
+    // Minimum base for the power function when the exponent is 'free' (larger than ONE).
+    uint256 internal constant MIN_POW_BASE_FREE_EXPONENT = 0.7e18;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function add(uint256 a, uint256 b) internal pure returns (uint256) {</span>
+        // Fixed Point addition is the same as regular checked addition
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 c = a + b;</span>
+<span class="cstat-no" title="statement not covered" >        _require(c &gt;= a, Errors.ADD_OVERFLOW)</span>;
+<span class="cstat-no" title="statement not covered" >        return c;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function sub(uint256 a, uint256 b) internal pure returns (uint256) {</span>
+        // Fixed Point addition is the same as regular checked addition
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        _require(b &lt;= a, Errors.SUB_OVERFLOW)</span>;
+<span class="cstat-no" title="statement not covered" >        uint256 c = a - b;</span>
+<span class="cstat-no" title="statement not covered" >        return c;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function mulDown(uint256 a, uint256 b) internal pure returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        uint256 product = a * b;</span>
+<span class="cstat-no" title="statement not covered" >        _require(a == 0 || product / a == b, Errors.MUL_OVERFLOW)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return product / ONE;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function mulUp(uint256 a, uint256 b) internal pure returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        uint256 product = a * b;</span>
+<span class="cstat-no" title="statement not covered" >        _require(a == 0 || product / a == b, Errors.MUL_OVERFLOW)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (product == 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return 0;</span>
+        } else {
+            // The traditional divUp formula is:
+            // divUp(x, y) := (x + y - 1) / y
+            // To avoid intermediate overflow in the addition, we distribute the division and get:
+            // divUp(x, y) := (x - 1) / y + 1
+            // Note that this requires x != 0, which we already tested for.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return ((product - 1) / ONE) + 1;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function divDown(uint256 a, uint256 b) internal pure returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        _require(b != 0, Errors.ZERO_DIVISION)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (a == 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return 0;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            uint256 aInflated = a * ONE;</span>
+<span class="cstat-no" title="statement not covered" >            _require(aInflated / a == ONE, Errors.DIV_INTERNAL)</span>; // mul overflow
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return aInflated / b;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function divUp(uint256 a, uint256 b) internal pure returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        _require(b != 0, Errors.ZERO_DIVISION)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (a == 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return 0;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            uint256 aInflated = a * ONE;</span>
+<span class="cstat-no" title="statement not covered" >            _require(aInflated / a == ONE, Errors.DIV_INTERNAL)</span>; // mul overflow
+&nbsp;
+            // The traditional divUp formula is:
+            // divUp(x, y) := (x + y - 1) / y
+            // To avoid intermediate overflow in the addition, we distribute the division and get:
+            // divUp(x, y) := (x - 1) / y + 1
+            // Note that this requires x != 0, which we already tested for.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return ((aInflated - 1) / b) + 1;</span>
+        }
+    }
+&nbsp;
+    /**
+     * @dev Returns x^y, assuming both are fixed point numbers, rounding down. The result is guaranteed to not be above
+     * the true value (that is, the error function expected - actual is always positive).
+     */
+<span class="fstat-no" title="function not covered" >    function powDown(uint256 x, uint256 y) internal pure returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        uint256 raw = LogExpMath.pow(x, y);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 maxError = add(mulUp(raw, MAX_POW_RELATIVE_ERROR), 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (raw &lt; maxError) {</span>
+<span class="cstat-no" title="statement not covered" >            return 0;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return sub(raw, maxError);</span>
+        }
+    }
+&nbsp;
+    /**
+     * @dev Returns x^y, assuming both are fixed point numbers, rounding up. The result is guaranteed to not be below
+     * the true value (that is, the error function expected - actual is always negative).
+     */
+<span class="fstat-no" title="function not covered" >    function powUp(uint256 x, uint256 y) internal pure returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        uint256 raw = LogExpMath.pow(x, y);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 maxError = add(mulUp(raw, MAX_POW_RELATIVE_ERROR), 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return add(raw, maxError);</span>
+    }
+&nbsp;
+    /**
+     * @dev Returns the complement of a value (1 - x), capped to 0 if x is larger than 1.
+     *
+     * Useful when computing the complement for values with some level of relative error, as it strips this error and
+     * prevents intermediate negative values.
+     */
+<span class="fstat-no" title="function not covered" >    function complement(uint256 x) internal pure returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return (x &lt; ONE) ? (ONE - x) : 0;</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 28 2021 15:51:37 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

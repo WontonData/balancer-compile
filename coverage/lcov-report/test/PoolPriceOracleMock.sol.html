@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for test/PoolPriceOracleMock.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">test/</a> PoolPriceOracleMock.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/14</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0-or-later
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+&nbsp;
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+&nbsp;
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+&nbsp;
+pragma solidity ^0.7.0;
+pragma experimental ABIEncoderV2;
+&nbsp;
+import "../pools/oracle/Samples.sol";
+import "../pools/oracle/PoolPriceOracle.sol";
+import "../pools/IPriceOracle.sol";
+&nbsp;
+contract PoolPriceOracleMock is PoolPriceOracle {
+    using Samples for bytes32;
+&nbsp;
+    struct Sample {
+        int256 logPairPrice;
+        int256 accLogPairPrice;
+        int256 logBptPrice;
+        int256 accLogBptPrice;
+        int256 logInvariant;
+        int256 accLogInvariant;
+        uint256 timestamp;
+    }
+&nbsp;
+    event PriceDataProcessed(bool newSample, uint256 sampleIndex);
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function encode(Sample memory sample) public pure returns (bytes32) {</span>
+<span class="cstat-no" title="statement not covered" >        return</span>
+            Samples.pack(
+                sample.logPairPrice,
+                sample.accLogPairPrice,
+                sample.logBptPrice,
+                sample.accLogBptPrice,
+                sample.logInvariant,
+                sample.accLogInvariant,
+                sample.timestamp
+            );
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function decode(bytes32 sample) public pure returns (Sample memory) {</span>
+<span class="cstat-no" title="statement not covered" >        return</span>
+            Sample({
+                logPairPrice: sample.instant(IPriceOracle.Variable.PAIR_PRICE),
+                accLogPairPrice: sample.accumulator(IPriceOracle.Variable.PAIR_PRICE),
+                logBptPrice: sample.instant(IPriceOracle.Variable.BPT_PRICE),
+                accLogBptPrice: sample.accumulator(IPriceOracle.Variable.BPT_PRICE),
+                logInvariant: sample.instant(IPriceOracle.Variable.INVARIANT),
+                accLogInvariant: sample.accumulator(IPriceOracle.Variable.INVARIANT),
+                timestamp: sample.timestamp()
+            });
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function mockSample(uint256 index, Sample memory sample) public {</span>
+<span class="cstat-no" title="statement not covered" >        _samples[index] = encode(sample)</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function mockSamples(uint256[] memory indexes, Sample[] memory samples) public {</span>
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; indexes.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            mockSample(indexes[i], samples[i])</span>;
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function update(</span>
+        bytes32 sample,
+        int256 logPairPrice,
+        int256 logBptPrice,
+        int256 logInvariant,
+        uint256 timestamp
+    ) public pure returns (Sample memory) {
+<span class="cstat-no" title="statement not covered" >        return decode(sample.update(logPairPrice, logBptPrice, logInvariant, timestamp));</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function processPriceData(</span>
+        uint256 elapsed,
+        uint256 currentIndex,
+        int256 logPairPrice,
+        int256 logBptPrice,
+        int256 logInvariant
+    ) public {
+<span class="cstat-no" title="statement not covered" >        uint256 currentSampleInitialTimestamp = block.timestamp - elapsed;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 sampleIndex = _processPriceData(</span>
+            currentSampleInitialTimestamp,
+            currentIndex,
+            logPairPrice,
+            logBptPrice,
+            logInvariant
+        );
+<span class="cstat-no" title="statement not covered" >        emit PriceDataProcessed(sampleIndex != currentIndex, sampleIndex);</span>
+    }
+&nbsp;
+    struct BinarySearchResult {
+        uint256 prev;
+        uint256 next;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function findNearestSamplesTimestamp(uint256[] memory dates, uint256 offset)</span>
+        external
+        view
+        returns (BinarySearchResult[] memory results)
+    {
+<span class="cstat-no" title="statement not covered" >        results = new BinarySearchResult[](dates.length)</span>;
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; dates.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            (bytes32 prev, bytes32 next) = _findNearestSample(dates[i], offset);</span>
+<span class="cstat-no" title="statement not covered" >            results[i] = BinarySearchResult({ prev: prev.timestamp(), next: next.timestamp() })</span>;
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getPastAccumulator(</span>
+        IPriceOracle.Variable variable,
+        uint256 currentIndex,
+        uint256 timestamp
+    ) external view returns (int256) {
+<span class="cstat-no" title="statement not covered" >        return _getPastAccumulator(variable, currentIndex, block.timestamp - timestamp);</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 28 2021 15:51:37 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

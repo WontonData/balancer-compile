@@ -1,0 +1,4523 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/lee/Code/Conflux-UMA/hardhat/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1630132905645,
+      "contentHash": "a4f6dccf3f15b6844e357f737a572388",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC721.sol",
+        "./IERC721Receiver.sol",
+        "./extensions/IERC721Metadata.sol",
+        "../../utils/Address.sol",
+        "../../utils/Context.sol",
+        "../../utils/Strings.sol",
+        "../../utils/introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC721"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1630132905651,
+      "contentHash": "53919d6975f2c0f3dffee5e3a1064116",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1630132905652,
+      "contentHash": "9a367cecca6fed80a3e975b7e6b3bd5c",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721Receiver"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+      "lastModificationDate": 1630132905652,
+      "contentHash": "8aa69ca8424167555baaaa9f607801db",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721Metadata"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1630132905640,
+      "contentHash": "c5f6c4e4df069c789e7d84b4c3011913",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1630132905642,
+      "contentHash": "851485d5b925529b1a2f34a0be077891",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1630132905656,
+      "contentHash": "62142442bed149f965c5ed971fae4182",
+      "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1630132905643,
+      "contentHash": "a9a5319dff9088c6ffe757ea1c2a6729",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1630132905649,
+      "contentHash": "9a04322bb8f6b8f2767d8358d1d2537b",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/AssetHelpers.sol": {
+      "lastModificationDate": 1630135854281,
+      "contentHash": "1fa030c78b773ddabe0d8ba6c26ded79",
+      "sourceName": "contracts/balancer-core-v2/lib/helpers/AssetHelpers.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../openzeppelin/IERC20.sol",
+        "../../vault/interfaces/IAsset.sol",
+        "../../vault/interfaces/IWETH.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "AssetHelpers"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/IERC20.sol": {
+      "lastModificationDate": 1630135854283,
+      "contentHash": "227d410099f794483090324d1492bc09",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/IERC20.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IAsset.sol": {
+      "lastModificationDate": 1630135854294,
+      "contentHash": "8571bd894a72974d092d8bb0d510213d",
+      "sourceName": "contracts/balancer-core-v2/vault/interfaces/IAsset.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IAsset"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IWETH.sol": {
+      "lastModificationDate": 1630135854294,
+      "contentHash": "63e5c8296f9f483d4fea4eb00c93492e",
+      "sourceName": "contracts/balancer-core-v2/vault/interfaces/IWETH.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/openzeppelin/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IWETH"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/AssetTransfersHandler.sol": {
+      "lastModificationDate": 1630135854292,
+      "contentHash": "2b24bd759ac490c97ecf0db230c8b470",
+      "sourceName": "contracts/balancer-core-v2/vault/AssetTransfersHandler.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/math/Math.sol",
+        "../lib/helpers/BalancerErrors.sol",
+        "../lib/openzeppelin/IERC20.sol",
+        "../lib/helpers/AssetHelpers.sol",
+        "../lib/openzeppelin/SafeERC20.sol",
+        "../lib/openzeppelin/Address.sol",
+        "./interfaces/IWETH.sol",
+        "./interfaces/IAsset.sol",
+        "./interfaces/IVault.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "AssetTransfersHandler"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/math/Math.sol": {
+      "lastModificationDate": 1630135854280,
+      "contentHash": "1e25b19486f982297eed72ee9a0386f2",
+      "sourceName": "contracts/balancer-core-v2/lib/math/Math.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../helpers/BalancerErrors.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/BalancerErrors.sol": {
+      "lastModificationDate": 1630135854283,
+      "contentHash": "09e07cba582ab1c7b6051b5a3cdeae9d",
+      "sourceName": "contracts/balancer-core-v2/lib/helpers/BalancerErrors.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Errors"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/SafeERC20.sol": {
+      "lastModificationDate": 1630135854285,
+      "contentHash": "0dd01dfe51c18c72fdff0714c4fd8ceb",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../helpers/BalancerErrors.sol",
+        "./IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/Address.sol": {
+      "lastModificationDate": 1630135854285,
+      "contentHash": "832fc79f2bdae97fa15136eb6b7c9b50",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/Address.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../helpers/BalancerErrors.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IVault.sol": {
+      "lastModificationDate": 1630135854293,
+      "contentHash": "ea3a79f898a8af7b3407ba94b1635ac9",
+      "sourceName": "contracts/balancer-core-v2/vault/interfaces/IVault.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/openzeppelin/IERC20.sol",
+        "./IWETH.sol",
+        "./IAsset.sol",
+        "./IAuthorizer.sol",
+        "./IFlashLoanRecipient.sol",
+        "../ProtocolFeesCollector.sol",
+        "../../lib/helpers/ISignaturesValidator.sol",
+        "../../lib/helpers/ITemporarilyPausable.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IVault"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IAuthorizer.sol": {
+      "lastModificationDate": 1630135854294,
+      "contentHash": "2135974a65cc60746c01cfc589794f9f",
+      "sourceName": "contracts/balancer-core-v2/vault/interfaces/IAuthorizer.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IAuthorizer"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IFlashLoanRecipient.sol": {
+      "lastModificationDate": 1630135854293,
+      "contentHash": "c579e034c09706f7fd5e5611935cea0d",
+      "sourceName": "contracts/balancer-core-v2/vault/interfaces/IFlashLoanRecipient.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/openzeppelin/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IFlashLoanRecipient"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/ProtocolFeesCollector.sol": {
+      "lastModificationDate": 1630135854289,
+      "contentHash": "1fcc9239473581f505d51843ce12ea30",
+      "sourceName": "contracts/balancer-core-v2/vault/ProtocolFeesCollector.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/openzeppelin/IERC20.sol",
+        "../lib/helpers/InputHelpers.sol",
+        "../lib/helpers/Authentication.sol",
+        "../lib/openzeppelin/ReentrancyGuard.sol",
+        "../lib/openzeppelin/SafeERC20.sol",
+        "./interfaces/IVault.sol",
+        "./interfaces/IAuthorizer.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "ProtocolFeesCollector"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/ISignaturesValidator.sol": {
+      "lastModificationDate": 1630135854281,
+      "contentHash": "002c3583802f967e1e243a26f27935c8",
+      "sourceName": "contracts/balancer-core-v2/lib/helpers/ISignaturesValidator.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "ISignaturesValidator"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/ITemporarilyPausable.sol": {
+      "lastModificationDate": 1630135854282,
+      "contentHash": "83e8d029f44d2989a7d5575fc6784826",
+      "sourceName": "contracts/balancer-core-v2/lib/helpers/ITemporarilyPausable.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "ITemporarilyPausable"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/InputHelpers.sol": {
+      "lastModificationDate": 1630135854280,
+      "contentHash": "a6e2ea3647e7ec33ae310679b189e1c4",
+      "sourceName": "contracts/balancer-core-v2/lib/helpers/InputHelpers.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../openzeppelin/IERC20.sol",
+        "./BalancerErrors.sol",
+        "../../vault/interfaces/IAsset.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "InputHelpers"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/Authentication.sol": {
+      "lastModificationDate": 1630135854280,
+      "contentHash": "afc6674b750c2a2bce9e9a1e1d47b7aa",
+      "sourceName": "contracts/balancer-core-v2/lib/helpers/Authentication.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./BalancerErrors.sol",
+        "./IAuthentication.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Authentication"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/ReentrancyGuard.sol": {
+      "lastModificationDate": 1630135854283,
+      "contentHash": "2862bc5c9b7af120c600f598682307b7",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../helpers/BalancerErrors.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/IAuthentication.sol": {
+      "lastModificationDate": 1630135854281,
+      "contentHash": "6bf425ca65051509b82564fa5cd3f414",
+      "sourceName": "contracts/balancer-core-v2/lib/helpers/IAuthentication.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IAuthentication"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/UserBalance.sol": {
+      "lastModificationDate": 1630135854288,
+      "contentHash": "3aa682e8a166ea7c45336fc705bfe1c0",
+      "sourceName": "contracts/balancer-core-v2/vault/UserBalance.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/helpers/BalancerErrors.sol",
+        "../lib/math/Math.sol",
+        "../lib/openzeppelin/IERC20.sol",
+        "../lib/openzeppelin/ReentrancyGuard.sol",
+        "../lib/openzeppelin/SafeCast.sol",
+        "../lib/openzeppelin/SafeERC20.sol",
+        "./AssetTransfersHandler.sol",
+        "./VaultAuthorization.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "UserBalance"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/SafeCast.sol": {
+      "lastModificationDate": 1630135854287,
+      "contentHash": "4a820d1981f326ae8b722220514c3f26",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../helpers/BalancerErrors.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/VaultAuthorization.sol": {
+      "lastModificationDate": 1630135854290,
+      "contentHash": "6624110e07b01f5c48e13565794ef20f",
+      "sourceName": "contracts/balancer-core-v2/vault/VaultAuthorization.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/helpers/BalancerErrors.sol",
+        "../lib/helpers/Authentication.sol",
+        "../lib/helpers/TemporarilyPausable.sol",
+        "../lib/helpers/BalancerErrors.sol",
+        "../lib/helpers/SignaturesValidator.sol",
+        "../lib/openzeppelin/ReentrancyGuard.sol",
+        "./interfaces/IVault.sol",
+        "./interfaces/IAuthorizer.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "VaultAuthorization"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/TemporarilyPausable.sol": {
+      "lastModificationDate": 1630135854281,
+      "contentHash": "f5ca7970aa1f94cece6934d34fbf72e3",
+      "sourceName": "contracts/balancer-core-v2/lib/helpers/TemporarilyPausable.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./BalancerErrors.sol",
+        "./ITemporarilyPausable.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "TemporarilyPausable"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/SignaturesValidator.sol": {
+      "lastModificationDate": 1630135854282,
+      "contentHash": "f948e1faa3443d183ae302b872e9d067",
+      "sourceName": "contracts/balancer-core-v2/lib/helpers/SignaturesValidator.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./BalancerErrors.sol",
+        "./ISignaturesValidator.sol",
+        "../openzeppelin/EIP712.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "SignaturesValidator"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/EIP712.sol": {
+      "lastModificationDate": 1630135854286,
+      "contentHash": "3f72f246d20ae70c8162f0d42647963a",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/EIP712.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "EIP712"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/PoolBalances.sol": {
+      "lastModificationDate": 1630135854290,
+      "contentHash": "36c434ce65da073a50aecc4755fe2fdb",
+      "sourceName": "contracts/balancer-core-v2/vault/PoolBalances.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/math/Math.sol",
+        "../lib/helpers/BalancerErrors.sol",
+        "../lib/helpers/InputHelpers.sol",
+        "../lib/openzeppelin/IERC20.sol",
+        "../lib/openzeppelin/ReentrancyGuard.sol",
+        "../lib/openzeppelin/SafeERC20.sol",
+        "./Fees.sol",
+        "./PoolTokens.sol",
+        "./UserBalance.sol",
+        "./interfaces/IBasePool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "PoolBalances"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/Fees.sol": {
+      "lastModificationDate": 1630135854288,
+      "contentHash": "74c12702fadd69e1e4f03e24b1b84f5c",
+      "sourceName": "contracts/balancer-core-v2/vault/Fees.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/math/FixedPoint.sol",
+        "../lib/helpers/BalancerErrors.sol",
+        "../lib/openzeppelin/IERC20.sol",
+        "../lib/openzeppelin/ReentrancyGuard.sol",
+        "../lib/openzeppelin/SafeERC20.sol",
+        "./ProtocolFeesCollector.sol",
+        "./VaultAuthorization.sol",
+        "./interfaces/IVault.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Fees"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/PoolTokens.sol": {
+      "lastModificationDate": 1630135854290,
+      "contentHash": "e25d117fb4201f6291a97df4f3facb8c",
+      "sourceName": "contracts/balancer-core-v2/vault/PoolTokens.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/helpers/BalancerErrors.sol",
+        "../lib/openzeppelin/ReentrancyGuard.sol",
+        "./AssetManagers.sol",
+        "./PoolRegistry.sol",
+        "./balances/BalanceAllocation.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "PoolTokens"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IBasePool.sol": {
+      "lastModificationDate": 1630135854293,
+      "contentHash": "cd8fec3ac8ba9cf7299c762426f810d0",
+      "sourceName": "contracts/balancer-core-v2/vault/interfaces/IBasePool.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./IVault.sol",
+        "./IPoolSwapStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IBasePool"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/math/FixedPoint.sol": {
+      "lastModificationDate": 1630135854279,
+      "contentHash": "3a55c7ebf88bce8af5f838a442aedc71",
+      "sourceName": "contracts/balancer-core-v2/lib/math/FixedPoint.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./LogExpMath.sol",
+        "../helpers/BalancerErrors.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "FixedPoint"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/math/LogExpMath.sol": {
+      "lastModificationDate": 1630135854279,
+      "contentHash": "440c7b6035b718ec3b40330efcc1789b",
+      "sourceName": "contracts/balancer-core-v2/lib/math/LogExpMath.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../helpers/BalancerErrors.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "LogExpMath"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/AssetManagers.sol": {
+      "lastModificationDate": 1630135854288,
+      "contentHash": "b12b8b9fe5ff79d72f2989980ef4534c",
+      "sourceName": "contracts/balancer-core-v2/vault/AssetManagers.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/math/Math.sol",
+        "../lib/helpers/BalancerErrors.sol",
+        "../lib/helpers/InputHelpers.sol",
+        "../lib/openzeppelin/IERC20.sol",
+        "../lib/openzeppelin/SafeERC20.sol",
+        "../lib/openzeppelin/ReentrancyGuard.sol",
+        "./UserBalance.sol",
+        "./balances/BalanceAllocation.sol",
+        "./balances/GeneralPoolsBalance.sol",
+        "./balances/MinimalSwapInfoPoolsBalance.sol",
+        "./balances/TwoTokenPoolsBalance.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "AssetManagers"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/PoolRegistry.sol": {
+      "lastModificationDate": 1630135854288,
+      "contentHash": "eb1f98d0e4cc3aca2401d80ccfddf3e7",
+      "sourceName": "contracts/balancer-core-v2/vault/PoolRegistry.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/helpers/BalancerErrors.sol",
+        "../lib/openzeppelin/ReentrancyGuard.sol",
+        "./VaultAuthorization.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "PoolRegistry"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/balances/BalanceAllocation.sol": {
+      "lastModificationDate": 1630135854292,
+      "contentHash": "20420266c17acf0dc69c8a52989034f9",
+      "sourceName": "contracts/balancer-core-v2/vault/balances/BalanceAllocation.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/math/Math.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "BalanceAllocation"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/balances/GeneralPoolsBalance.sol": {
+      "lastModificationDate": 1630135854292,
+      "contentHash": "004cd6edcc2edaa70f99c2aacd9ca6c7",
+      "sourceName": "contracts/balancer-core-v2/vault/balances/GeneralPoolsBalance.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/helpers/BalancerErrors.sol",
+        "../../lib/openzeppelin/EnumerableMap.sol",
+        "../../lib/openzeppelin/IERC20.sol",
+        "./BalanceAllocation.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "GeneralPoolsBalance"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/balances/MinimalSwapInfoPoolsBalance.sol": {
+      "lastModificationDate": 1630135854291,
+      "contentHash": "c983669c800b0b982e46a0c26887e3c9",
+      "sourceName": "contracts/balancer-core-v2/vault/balances/MinimalSwapInfoPoolsBalance.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/helpers/BalancerErrors.sol",
+        "../../lib/openzeppelin/EnumerableSet.sol",
+        "../../lib/openzeppelin/IERC20.sol",
+        "./BalanceAllocation.sol",
+        "../PoolRegistry.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "MinimalSwapInfoPoolsBalance"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/balances/TwoTokenPoolsBalance.sol": {
+      "lastModificationDate": 1630135854291,
+      "contentHash": "d8ca8c2a0b1f93c009992206c665f56e",
+      "sourceName": "contracts/balancer-core-v2/vault/balances/TwoTokenPoolsBalance.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/helpers/BalancerErrors.sol",
+        "../../lib/openzeppelin/IERC20.sol",
+        "./BalanceAllocation.sol",
+        "../PoolRegistry.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "TwoTokenPoolsBalance"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/EnumerableMap.sol": {
+      "lastModificationDate": 1630135854285,
+      "contentHash": "0a706ba81c3363de7ca64a347402d61f",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/EnumerableMap.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "../helpers/BalancerErrors.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "EnumerableMap"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/EnumerableSet.sol": {
+      "lastModificationDate": 1630135854286,
+      "contentHash": "cc8c6db700484b9f02bca3dd3d75bc1d",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/EnumerableSet.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../helpers/BalancerErrors.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "EnumerableSet"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IPoolSwapStructs.sol": {
+      "lastModificationDate": 1630135854294,
+      "contentHash": "bffce73a97d9cb8fe1770d633e38e6c2",
+      "sourceName": "contracts/balancer-core-v2/vault/interfaces/IPoolSwapStructs.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/openzeppelin/IERC20.sol",
+        "./IVault.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IPoolSwapStructs"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/Swaps.sol": {
+      "lastModificationDate": 1630135854291,
+      "contentHash": "953cceee0d7f001a6f8bde2569048640",
+      "sourceName": "contracts/balancer-core-v2/vault/Swaps.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/math/Math.sol",
+        "../lib/helpers/BalancerErrors.sol",
+        "../lib/helpers/InputHelpers.sol",
+        "../lib/openzeppelin/EnumerableMap.sol",
+        "../lib/openzeppelin/EnumerableSet.sol",
+        "../lib/openzeppelin/IERC20.sol",
+        "../lib/openzeppelin/ReentrancyGuard.sol",
+        "../lib/openzeppelin/SafeCast.sol",
+        "../lib/openzeppelin/SafeERC20.sol",
+        "./PoolBalances.sol",
+        "./interfaces/IPoolSwapStructs.sol",
+        "./interfaces/IGeneralPool.sol",
+        "./interfaces/IMinimalSwapInfoPool.sol",
+        "./balances/BalanceAllocation.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Swaps"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IGeneralPool.sol": {
+      "lastModificationDate": 1630135854292,
+      "contentHash": "e1d289b160302cce2c3282b4122912f5",
+      "sourceName": "contracts/balancer-core-v2/vault/interfaces/IGeneralPool.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./IBasePool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IGeneralPool"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IMinimalSwapInfoPool.sol": {
+      "lastModificationDate": 1630135854293,
+      "contentHash": "a23fccea796b26f00ddc81ae586fbc52",
+      "sourceName": "contracts/balancer-core-v2/vault/interfaces/IMinimalSwapInfoPool.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./IBasePool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IMinimalSwapInfoPool"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/FlashLoans.sol": {
+      "lastModificationDate": 1630135854289,
+      "contentHash": "79aba614795ddfc6a836b7bf2c52bed5",
+      "sourceName": "contracts/balancer-core-v2/vault/FlashLoans.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/helpers/BalancerErrors.sol",
+        "../lib/openzeppelin/IERC20.sol",
+        "../lib/openzeppelin/ReentrancyGuard.sol",
+        "../lib/openzeppelin/SafeERC20.sol",
+        "./Fees.sol",
+        "./interfaces/IFlashLoanRecipient.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "FlashLoans"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockFlashLoanRecipient.sol": {
+      "lastModificationDate": 1630135854279,
+      "contentHash": "371694e381e2e308df4077bfd1767b02",
+      "sourceName": "contracts/balancer-core-v2/test/MockFlashLoanRecipient.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/math/Math.sol",
+        "../lib/openzeppelin/IERC20.sol",
+        "../lib/openzeppelin/SafeERC20.sol",
+        "../vault/interfaces/IFlashLoanRecipient.sol",
+        "../vault/interfaces/IVault.sol",
+        "./TestToken.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "MockFlashLoanRecipient"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/TestToken.sol": {
+      "lastModificationDate": 1630135854279,
+      "contentHash": "1fd3e854029c9a34926de28ce507b582",
+      "sourceName": "contracts/balancer-core-v2/test/TestToken.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/openzeppelin/ERC20.sol",
+        "../lib/openzeppelin/ERC20Burnable.sol",
+        "../lib/openzeppelin/AccessControl.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "TestToken"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/ERC20.sol": {
+      "lastModificationDate": 1630135854284,
+      "contentHash": "19dd9942298c82e8aa845804a3993cf1",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/ERC20.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../helpers/BalancerErrors.sol",
+        "./IERC20.sol",
+        "./SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/ERC20Burnable.sol": {
+      "lastModificationDate": 1630135854284,
+      "contentHash": "e1f375a9fd0668548ce65621736986ff",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/ERC20Burnable.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "ERC20Burnable"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/AccessControl.sol": {
+      "lastModificationDate": 1630135854287,
+      "contentHash": "7a8f3af252b75bdb7241397c4dedea75",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../helpers/BalancerErrors.sol",
+        "./EnumerableSet.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "AccessControl"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/SafeMath.sol": {
+      "lastModificationDate": 1630135854285,
+      "contentHash": "82a87a3a78fe68a15646cdd782349013",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../helpers/BalancerErrors.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/TokenFactory.sol": {
+      "lastModificationDate": 1630135854278,
+      "contentHash": "3d538b8574b39a14c40b81595a45d98e",
+      "sourceName": "contracts/balancer-core-v2/test/TokenFactory.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/openzeppelin/Address.sol",
+        "../lib/openzeppelin/Create2.sol",
+        "./TestToken.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "TokenFactory"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/Create2.sol": {
+      "lastModificationDate": 1630135854286,
+      "contentHash": "a25382540962080dc55f35459bc6e6a8",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/Create2.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../helpers/BalancerErrors.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Create2"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockVault.sol": {
+      "lastModificationDate": 1630135854274,
+      "contentHash": "c4a0ba0554f1ab9b7b13d123f3cb0209",
+      "sourceName": "contracts/balancer-core-v2/test/MockVault.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/openzeppelin/IERC20.sol",
+        "../vault/interfaces/IVault.sol",
+        "../vault/interfaces/IBasePool.sol",
+        "../vault/interfaces/IPoolSwapStructs.sol",
+        "../vault/interfaces/IMinimalSwapInfoPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "MockVault"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockPool.sol": {
+      "lastModificationDate": 1630135854273,
+      "contentHash": "4d7eab8b85a9ba81c60365411777b835",
+      "sourceName": "contracts/balancer-core-v2/test/MockPool.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/math/FixedPoint.sol",
+        "../lib/openzeppelin/IERC20.sol",
+        "../vault/interfaces/IVault.sol",
+        "../vault/interfaces/IGeneralPool.sol",
+        "../vault/interfaces/IMinimalSwapInfoPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "MockPool"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/factories/BasePoolFactory.sol": {
+      "lastModificationDate": 1630135854271,
+      "contentHash": "4b5d7b406f1f11a0cb5632acc106f828",
+      "sourceName": "contracts/balancer-core-v2/pools/factories/BasePoolFactory.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../vault/interfaces/IVault.sol",
+        "../../vault/interfaces/IBasePool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "BasePoolFactory"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockPoolFactory.sol": {
+      "lastModificationDate": 1630135854278,
+      "contentHash": "d7480aafaffe4c312a64be8b65e07249",
+      "sourceName": "contracts/balancer-core-v2/test/MockPoolFactory.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../vault/interfaces/IVault.sol",
+        "../pools/factories/BasePoolFactory.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "MockFactoryCreatedPool",
+        "MockPoolFactory"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedPool.sol": {
+      "lastModificationDate": 1630135854268,
+      "contentHash": "ab7780cdd713e57e74c32587872fcf05",
+      "sourceName": "contracts/balancer-core-v2/pools/weighted/WeightedPool.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/math/FixedPoint.sol",
+        "../../lib/helpers/InputHelpers.sol",
+        "../BaseMinimalSwapInfoPool.sol",
+        "./WeightedMath.sol",
+        "./WeightedPoolUserDataHelpers.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "WeightedPool"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/BaseMinimalSwapInfoPool.sol": {
+      "lastModificationDate": 1630135854269,
+      "contentHash": "2c36b138bd3804979c586759d60b755f",
+      "sourceName": "contracts/balancer-core-v2/pools/BaseMinimalSwapInfoPool.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./BasePool.sol",
+        "../vault/interfaces/IMinimalSwapInfoPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "BaseMinimalSwapInfoPool"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedMath.sol": {
+      "lastModificationDate": 1630135854266,
+      "contentHash": "70248f3d430041197f0f6c188d02b0b1",
+      "sourceName": "contracts/balancer-core-v2/pools/weighted/WeightedMath.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/math/FixedPoint.sol",
+        "../../lib/math/Math.sol",
+        "../../lib/helpers/InputHelpers.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "WeightedMath"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedPoolUserDataHelpers.sol": {
+      "lastModificationDate": 1630135854268,
+      "contentHash": "de58e62c30a37a93824f13505304f221",
+      "sourceName": "contracts/balancer-core-v2/pools/weighted/WeightedPoolUserDataHelpers.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/openzeppelin/IERC20.sol",
+        "./WeightedPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "WeightedPoolUserDataHelpers"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/BasePool.sol": {
+      "lastModificationDate": 1630135854271,
+      "contentHash": "58b9b4d55baf7e061eceddf084fd265d",
+      "sourceName": "contracts/balancer-core-v2/pools/BasePool.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/math/FixedPoint.sol",
+        "../lib/helpers/InputHelpers.sol",
+        "../lib/helpers/TemporarilyPausable.sol",
+        "../lib/openzeppelin/ERC20.sol",
+        "./BalancerPoolToken.sol",
+        "./BasePoolAuthorization.sol",
+        "../vault/interfaces/IVault.sol",
+        "../vault/interfaces/IBasePool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "BasePool"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/BalancerPoolToken.sol": {
+      "lastModificationDate": 1630135854268,
+      "contentHash": "a536f4c60a593cf9f111221150d1586e",
+      "sourceName": "contracts/balancer-core-v2/pools/BalancerPoolToken.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/math/Math.sol",
+        "../lib/openzeppelin/IERC20.sol",
+        "../lib/openzeppelin/IERC20Permit.sol",
+        "../lib/openzeppelin/EIP712.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "BalancerPoolToken"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/BasePoolAuthorization.sol": {
+      "lastModificationDate": 1630135854272,
+      "contentHash": "ae3941018a4549415efa58d3a088b3f3",
+      "sourceName": "contracts/balancer-core-v2/pools/BasePoolAuthorization.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/helpers/Authentication.sol",
+        "../vault/interfaces/IAuthorizer.sol",
+        "./BasePool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "BasePoolAuthorization"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/IERC20Permit.sol": {
+      "lastModificationDate": 1630135854284,
+      "contentHash": "39ad845c9adeb3e04e172ffe975a7ea8",
+      "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IERC20Permit"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedPool2Tokens.sol": {
+      "lastModificationDate": 1630135854267,
+      "contentHash": "ae03c4214228aabee3405daca094b2d1",
+      "sourceName": "contracts/balancer-core-v2/pools/weighted/WeightedPool2Tokens.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/math/FixedPoint.sol",
+        "../../lib/helpers/InputHelpers.sol",
+        "../../lib/helpers/TemporarilyPausable.sol",
+        "../../lib/openzeppelin/ERC20.sol",
+        "./WeightedMath.sol",
+        "./WeightedOracleMath.sol",
+        "./WeightedPool2TokensMiscData.sol",
+        "./WeightedPoolUserDataHelpers.sol",
+        "../BalancerPoolToken.sol",
+        "../BasePoolAuthorization.sol",
+        "../oracle/PoolPriceOracle.sol",
+        "../oracle/Buffer.sol",
+        "../../vault/interfaces/IMinimalSwapInfoPool.sol",
+        "../IPriceOracle.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "WeightedPool2Tokens"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedOracleMath.sol": {
+      "lastModificationDate": 1630135854266,
+      "contentHash": "ba6860683ecd3c76c740d2f7f020082d",
+      "sourceName": "contracts/balancer-core-v2/pools/weighted/WeightedOracleMath.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/math//LogExpMath.sol",
+        "../../lib/math/FixedPoint.sol",
+        "../../lib/math/Math.sol",
+        "../../lib/helpers/InputHelpers.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "WeightedOracleMath"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedPool2TokensMiscData.sol": {
+      "lastModificationDate": 1630135854267,
+      "contentHash": "9535413e05b450968e2d872e9e4a474d",
+      "sourceName": "contracts/balancer-core-v2/pools/weighted/WeightedPool2TokensMiscData.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/helpers/WordCodec.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "WeightedPool2TokensMiscData"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/oracle/PoolPriceOracle.sol": {
+      "lastModificationDate": 1630135854270,
+      "contentHash": "0c82b756a959f6a63d51f31fc9eccb6f",
+      "sourceName": "contracts/balancer-core-v2/pools/oracle/PoolPriceOracle.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./Buffer.sol",
+        "./Samples.sol",
+        "../../lib/helpers/BalancerErrors.sol",
+        "./IWeightedPoolPriceOracle.sol",
+        "../IPriceOracle.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "PoolPriceOracle"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/oracle/Buffer.sol": {
+      "lastModificationDate": 1630135854270,
+      "contentHash": "45d0776260d1a3fa22aed0e43621d580",
+      "sourceName": "contracts/balancer-core-v2/pools/oracle/Buffer.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Buffer"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/IPriceOracle.sol": {
+      "lastModificationDate": 1630135854269,
+      "contentHash": "ae97062af70bd8bbc9fad08944e1c418",
+      "sourceName": "contracts/balancer-core-v2/pools/IPriceOracle.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IPriceOracle"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/WordCodec.sol": {
+      "lastModificationDate": 1630135854282,
+      "contentHash": "31ba7570abc78bce06470fc6893f1223",
+      "sourceName": "contracts/balancer-core-v2/lib/helpers/WordCodec.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "WordCodec"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/oracle/Samples.sol": {
+      "lastModificationDate": 1630135854270,
+      "contentHash": "a3157df59e1f1b2e1a4f3398cc661d8c",
+      "sourceName": "contracts/balancer-core-v2/pools/oracle/Samples.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/helpers/WordCodec.sol",
+        "../IPriceOracle.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Samples"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/oracle/IWeightedPoolPriceOracle.sol": {
+      "lastModificationDate": 1630135854269,
+      "contentHash": "968821a7a316d2eeea7d93a97acb2884",
+      "sourceName": "contracts/balancer-core-v2/pools/oracle/IWeightedPoolPriceOracle.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "IWeightedPoolPriceOracle"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/WeightedPool2TokensMock.sol": {
+      "lastModificationDate": 1630135854275,
+      "contentHash": "f40c781b350b770db745359d33a330c5",
+      "sourceName": "contracts/balancer-core-v2/test/WeightedPool2TokensMock.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./PoolPriceOracleMock.sol",
+        "./MockWeightedOracleMath.sol",
+        "../pools/weighted/WeightedPool2Tokens.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "WeightedPool2TokensMock"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/PoolPriceOracleMock.sol": {
+      "lastModificationDate": 1630135854274,
+      "contentHash": "01e9b820486ef45ec68524467248f286",
+      "sourceName": "contracts/balancer-core-v2/test/PoolPriceOracleMock.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../pools/oracle/Samples.sol",
+        "../pools/oracle/PoolPriceOracle.sol",
+        "../pools/IPriceOracle.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "PoolPriceOracleMock"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockWeightedOracleMath.sol": {
+      "lastModificationDate": 1630135854272,
+      "contentHash": "c0359b3ff2bc4ac58ed1b35ae00c5b19",
+      "sourceName": "contracts/balancer-core-v2/test/MockWeightedOracleMath.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../pools/weighted/WeightedOracleMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "MockWeightedOracleMath"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/Authorizer.sol": {
+      "lastModificationDate": 1630135854289,
+      "contentHash": "5e2586127316d1a4de0a5904faa1653b",
+      "sourceName": "contracts/balancer-core-v2/vault/Authorizer.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IAuthorizer.sol",
+        "../lib/openzeppelin/AccessControl.sol",
+        "../lib/helpers/InputHelpers.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Authorizer"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/WETH.sol": {
+      "lastModificationDate": 1630135854276,
+      "contentHash": "3d4fb5b29c4d2fc460bbd0636b00e2ab",
+      "sourceName": "contracts/balancer-core-v2/test/WETH.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/openzeppelin/AccessControl.sol",
+        "../vault/interfaces/IWETH.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "WETH"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/BalancerHelpers.sol": {
+      "lastModificationDate": 1630135854282,
+      "contentHash": "a51fbc732d5c7a732d12f67066395041",
+      "sourceName": "contracts/balancer-core-v2/lib/helpers/BalancerHelpers.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../math/Math.sol",
+        "../math/FixedPoint.sol",
+        "./InputHelpers.sol",
+        "./AssetHelpers.sol",
+        "./BalancerErrors.sol",
+        "../../pools/BasePool.sol",
+        "../../vault/ProtocolFeesCollector.sol",
+        "../../vault/interfaces/IWETH.sol",
+        "../../vault/interfaces/IVault.sol",
+        "../../vault/balances/BalanceAllocation.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "BalancerHelpers"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockBasePool.sol": {
+      "lastModificationDate": 1630135854278,
+      "contentHash": "ef6e0b530da5fba4ddd1bb838045a7f4",
+      "sourceName": "contracts/balancer-core-v2/test/MockBasePool.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../pools/BasePool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "MockBasePool"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/BaseGeneralPool.sol": {
+      "lastModificationDate": 1630135854270,
+      "contentHash": "d3edbff3f2f0807a2cb3bd503da3d90e",
+      "sourceName": "contracts/balancer-core-v2/pools/BaseGeneralPool.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./BasePool.sol",
+        "../vault/interfaces/IGeneralPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "BaseGeneralPool"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/stable/StablePool.sol": {
+      "lastModificationDate": 1630135854264,
+      "contentHash": "6f77342b9ce42e50d12bc36124a52715",
+      "sourceName": "contracts/balancer-core-v2/pools/stable/StablePool.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/math/FixedPoint.sol",
+        "../../lib/helpers/InputHelpers.sol",
+        "../BaseGeneralPool.sol",
+        "./StableMath.sol",
+        "./StablePoolUserDataHelpers.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "StablePool"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/stable/StableMath.sol": {
+      "lastModificationDate": 1630135854265,
+      "contentHash": "45094ab0b14e50f61d59d193b1c57670",
+      "sourceName": "contracts/balancer-core-v2/pools/stable/StableMath.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/math/Math.sol",
+        "../../lib/math/FixedPoint.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "StableMath"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/stable/StablePoolUserDataHelpers.sol": {
+      "lastModificationDate": 1630135854264,
+      "contentHash": "cf065434bb5c35e1d5df4faa4fdeac09",
+      "sourceName": "contracts/balancer-core-v2/pools/stable/StablePoolUserDataHelpers.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/openzeppelin/IERC20.sol",
+        "./StablePool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "StablePoolUserDataHelpers"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/stable/StablePoolFactory.sol": {
+      "lastModificationDate": 1630135854265,
+      "contentHash": "ff37ddae5b92b40c7d9426e63eae7e22",
+      "sourceName": "contracts/balancer-core-v2/pools/stable/StablePoolFactory.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../vault/interfaces/IVault.sol",
+        "../factories/BasePoolFactory.sol",
+        "../factories/FactoryWidePauseWindow.sol",
+        "./StablePool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "StablePoolFactory"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/factories/FactoryWidePauseWindow.sol": {
+      "lastModificationDate": 1630135854271,
+      "contentHash": "be131744d36e97427c020eb3ed8c8b83",
+      "sourceName": "contracts/balancer-core-v2/pools/factories/FactoryWidePauseWindow.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "FactoryWidePauseWindow"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedPool2TokensFactory.sol": {
+      "lastModificationDate": 1630135854266,
+      "contentHash": "709c0948c6fdb0a2915007c8cb432429",
+      "sourceName": "contracts/balancer-core-v2/pools/weighted/WeightedPool2TokensFactory.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../vault/interfaces/IVault.sol",
+        "../factories/BasePoolFactory.sol",
+        "../factories/FactoryWidePauseWindow.sol",
+        "./WeightedPool2Tokens.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "WeightedPool2TokensFactory"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/lib/EnumerableMapMock.sol": {
+      "lastModificationDate": 1630135854277,
+      "contentHash": "2f1afda6d84bbed17bedf1ef64f5a252",
+      "sourceName": "contracts/balancer-core-v2/test/lib/EnumerableMapMock.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/openzeppelin/EnumerableMap.sol",
+        "../../lib/openzeppelin/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "EnumerableIERC20ToBytes32MapMock"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/lib/ReentrancyMock.sol": {
+      "lastModificationDate": 1630135854277,
+      "contentHash": "ce6f0c698ed5880ef1d04b7d3c93a929",
+      "sourceName": "contracts/balancer-core-v2/test/lib/ReentrancyMock.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/openzeppelin/ReentrancyGuard.sol",
+        "./ReentrancyAttack.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "ReentrancyMock"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/lib/ReentrancyAttack.sol": {
+      "lastModificationDate": 1630135854276,
+      "contentHash": "4bc19dad828b4a09953da9e39e973848",
+      "sourceName": "contracts/balancer-core-v2/test/lib/ReentrancyAttack.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0 <0.8.0"
+      ],
+      "artifacts": [
+        "ReentrancyAttack"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockAssetTransfersHandler.sol": {
+      "lastModificationDate": 1630135854275,
+      "contentHash": "1b30101eb4e9acc575e6c085ef46b8e3",
+      "sourceName": "contracts/balancer-core-v2/test/MockAssetTransfersHandler.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/math/Math.sol",
+        "../lib/math/FixedPoint.sol",
+        "../lib/openzeppelin/SafeERC20.sol",
+        "../vault/AssetTransfersHandler.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "MockAssetTransfersHandler"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockWeightedMath.sol": {
+      "lastModificationDate": 1630135854272,
+      "contentHash": "6f4181b606dd0027fd42e0e844ebae67",
+      "sourceName": "contracts/balancer-core-v2/test/MockWeightedMath.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../pools/weighted/WeightedMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "MockWeightedMath"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockStableMath.sol": {
+      "lastModificationDate": 1630135854275,
+      "contentHash": "395b801c6714b3100102623fd67edfc8",
+      "sourceName": "contracts/balancer-core-v2/test/MockStableMath.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../pools/stable/StableMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "MockStableMath"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockBalancerPoolToken.sol": {
+      "lastModificationDate": 1630135854273,
+      "contentHash": "561d9ddf903f945581e088f9e611e0bc",
+      "sourceName": "contracts/balancer-core-v2/test/MockBalancerPoolToken.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../pools/BalancerPoolToken.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "MockBalancerPoolToken"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/lib/SignaturesValidatorMock.sol": {
+      "lastModificationDate": 1630135854277,
+      "contentHash": "7f91f70184fa2ce229f2e89edf3d58c5",
+      "sourceName": "contracts/balancer-core-v2/test/lib/SignaturesValidatorMock.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/helpers/SignaturesValidator.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "SignaturesValidatorMock"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockInternalBalanceRelayer.sol": {
+      "lastModificationDate": 1630135854274,
+      "contentHash": "59c4c43e883575586f4c79ddf62d7481",
+      "sourceName": "contracts/balancer-core-v2/test/MockInternalBalanceRelayer.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/openzeppelin/IERC20.sol",
+        "../vault/interfaces/IVault.sol",
+        "../lib/helpers/InputHelpers.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "MockInternalBalanceRelayer"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/lib/TemporarilyPausableMock.sol": {
+      "lastModificationDate": 1630135854276,
+      "contentHash": "7366cfa4f96c6f73abee1fd8f5bebacf",
+      "sourceName": "contracts/balancer-core-v2/test/lib/TemporarilyPausableMock.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/helpers/TemporarilyPausable.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "TemporarilyPausableMock"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/BalanceAllocationMock.sol": {
+      "lastModificationDate": 1630135854273,
+      "contentHash": "967fb9bab4d40dba75df3b90e8d22afe",
+      "sourceName": "contracts/balancer-core-v2/test/BalanceAllocationMock.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../vault/balances/BalanceAllocation.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "BalanceAllocationMock"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/lib/BalancerErrorsMock.sol": {
+      "lastModificationDate": 1630135854277,
+      "contentHash": "6bcb40eed5c744406bf3aae94f0d1c2c",
+      "sourceName": "contracts/balancer-core-v2/test/lib/BalancerErrorsMock.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../lib/helpers/BalancerErrors.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "BalancerErrorsMock"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/EthForceSender.sol": {
+      "lastModificationDate": 1630135854274,
+      "contentHash": "57082b947db99e29c20876bdca53f11f",
+      "sourceName": "contracts/balancer-core-v2/test/EthForceSender.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "EthForceSender"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/Multicall.sol": {
+      "lastModificationDate": 1630135854275,
+      "contentHash": "1abde0a5ae6133c2e96d59e03ae70129",
+      "sourceName": "contracts/balancer-core-v2/test/Multicall.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 10000
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Multicall"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/Vault.sol": {
+      "lastModificationDate": 1630135854290,
+      "contentHash": "ac0d7d5751ec76386748f2fad702dddf",
+      "sourceName": "contracts/balancer-core-v2/vault/Vault.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 400
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IAuthorizer.sol",
+        "./interfaces/IWETH.sol",
+        "./VaultAuthorization.sol",
+        "./FlashLoans.sol",
+        "./Swaps.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "Vault"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedPoolFactory.sol": {
+      "lastModificationDate": 1630135854267,
+      "contentHash": "2266aa26625f2733a652818331cbcf7f",
+      "sourceName": "contracts/balancer-core-v2/pools/weighted/WeightedPoolFactory.sol",
+      "solcConfig": {
+        "version": "0.7.1",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 800
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../../vault/interfaces/IVault.sol",
+        "../factories/BasePoolFactory.sol",
+        "../factories/FactoryWidePauseWindow.sol",
+        "./WeightedPool.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.0"
+      ],
+      "artifacts": [
+        "WeightedPoolFactory"
+      ]
+    }
+  }
+}

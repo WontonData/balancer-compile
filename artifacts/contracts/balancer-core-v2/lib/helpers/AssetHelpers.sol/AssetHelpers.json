@@ -1,0 +1,24 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "AssetHelpers",
+  "sourceName": "contracts/balancer-core-v2/lib/helpers/AssetHelpers.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "c__0x39781c2d",
+          "type": "bytes32"
+        }
+      ],
+      "name": "c_0x39781c2d",
+      "outputs": [],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

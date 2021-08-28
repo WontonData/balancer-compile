@@ -1,0 +1,35 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "EthForceSender",
+  "sourceName": "contracts/balancer-core-v2/test/EthForceSender.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "recipient",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "c__0x8792d2ec",
+          "type": "bytes32"
+        }
+      ],
+      "name": "c_0x8792d2ec",
+      "outputs": [],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x60806040526040516100ea3803806100ea8339818101604052602081101561002657600080fd5b81019080805190602001909291905050506100697f7672b0f5c2c24774e4db09dedf21f87543a4fee2152905f945b92f6e4122a65660001b6100e660201b60201c565b61009b7f42e6526e1989e967e900e6a72949634c7165805b3d6be0bd3561d5d70bc2c22060001b6100e660201b60201c565b6100cd7fd7f71dfa4eba4603f8e5c34fadbb928de7988c718ed16e83c2af9425068f21db60001b6100e660201b60201c565b8073ffffffffffffffffffffffffffffffffffffffff16ff5b5056fe",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063129eaba014602d575b600080fd5b605660048036036020811015604157600080fd5b81019080803590602001909291905050506058565b005b5056fea2646970667358221220dd94648168ee21758c2f01206221cf72fa2975b87d97d8de0e9654955f2f293364736f6c63430007010033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

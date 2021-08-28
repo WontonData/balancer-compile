@@ -1,0 +1,1574 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for pools/stable/StableMath.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">pools/stable/</a> StableMath.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/120</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/122</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0-or-later
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+&nbsp;
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+&nbsp;
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+&nbsp;
+pragma solidity ^0.7.0;
+&nbsp;
+import "../../lib/math/Math.sol";
+import "../../lib/math/FixedPoint.sol";
+&nbsp;
+// This is a contract to emulate file-level functions. Convert to a library
+// after the migration to solc v0.7.1.
+&nbsp;
+// solhint-disable private-vars-leading-underscore
+// solhint-disable var-name-mixedcase
+&nbsp;
+contract StableMath {
+    using FixedPoint for uint256;
+&nbsp;
+    uint256 internal constant _MIN_AMP = 1e18;
+    uint256 internal constant _MAX_AMP = 5000 * (1e18);
+&nbsp;
+    uint256 internal constant _MAX_STABLE_TOKENS = 5;
+&nbsp;
+    // Computes the invariant given the current balances, using the Newton-Raphson approximation.
+    // The amplification parameter equals: A n^(n-1)
+<span class="fstat-no" title="function not covered" >    function _calculateInvariant(uint256 amplificationParameter, uint256[] memory balances)</span>
+        internal
+        pure
+        returns (uint256)
+    {
+        /**********************************************************************************************
+        // invariant                                                                                 //
+        // D = invariant                                                  D^(n+1)                    //
+        // A = amplification coefficient      A  n^n S + D = A D n^n + -----------                   //
+        // S = sum of balances                                             n^n P                     //
+        // P = product of balances                                                                   //
+        // n = number of tokens                                                                      //
+        *********x************************************************************************************/
+&nbsp;
+        // We round up the invariant.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 sum = 0;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 numTokens = balances.length;</span>
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; numTokens; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            sum = sum.add(balances[i])</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        if (sum == 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return 0;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        uint256 prevInvariant = 0;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 invariant = sum;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 ampTimesTotal = Math.mul(amplificationParameter, numTokens);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; 255; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            uint256 P_D = Math.mul(numTokens, balances[0]);</span>
+<span class="cstat-no" title="statement not covered" >            for (uint256 j = 1; j &lt; numTokens; j++) {</span>
+<span class="cstat-no" title="statement not covered" >                P_D = Math.divUp(Math.mul(Math.mul(P_D, balances[j]), numTokens), invariant)</span>;
+            }
+<span class="cstat-no" title="statement not covered" >            prevInvariant = invariant</span>;
+<span class="cstat-no" title="statement not covered" >            invariant = Math.divUp(</span>
+                Math.mul(Math.mul(numTokens, invariant), invariant).add(Math.mul(Math.mul(ampTimesTotal, sum), P_D)),
+                Math.mul(numTokens.add(1), invariant).add(Math.mul(ampTimesTotal.sub(1), P_D))
+            );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (invariant &gt; prevInvariant) {</span>
+<span class="cstat-no" title="statement not covered" >                if (invariant.sub(prevInvariant) &lt;= 1) {</span>
+                    break;
+                }
+            } else <span class="cstat-no" title="statement not covered" >if (prevInvariant.sub(invariant) &lt;= 1) {</span>
+                break;
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return invariant;</span>
+    }
+&nbsp;
+    // Computes how many tokens can be taken out of a pool if `tokenAmountIn` are sent, given the current balances.
+    // The amplification parameter equals: A n^(n-1)
+<span class="fstat-no" title="function not covered" >    function _calcOutGivenIn(</span>
+        uint256 amplificationParameter,
+        uint256[] memory balances,
+        uint256 tokenIndexIn,
+        uint256 tokenIndexOut,
+        uint256 tokenAmountIn
+    ) internal pure returns (uint256) {
+        /**************************************************************************************************************
+        // outGivenIn token x for y - polynomial equation to solve                                                   //
+        // ay = amount out to calculate                                                                              //
+        // by = balance token out                                                                                    //
+        // y = by - ay (finalBalanceOut)                                                                             //
+        // D = invariant                                               D                     D^(n+1)                 //
+        // A = amplification coefficient               y^2 + ( S - ----------  - D) * y -  ------------- = 0         //
+        // n = number of tokens                                    (A * n^n)               A * n^2n * P              //
+        // S = sum of final balances but y                                                                           //
+        // P = product of final balances but y                                                                       //
+        **************************************************************************************************************/
+&nbsp;
+        // Amount out, so we round down overall.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 invariant = _calculateInvariant(amplificationParameter, balances);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        balances[tokenIndexIn] = balances[tokenIndexIn].add(tokenAmountIn)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 finalBalanceOut = _getTokenBalanceGivenInvariantAndAllOtherBalances(</span>
+            amplificationParameter,
+            balances,
+            invariant,
+            tokenIndexOut
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        balances[tokenIndexIn] = balances[tokenIndexIn].sub(tokenAmountIn)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return balances[tokenIndexOut].sub(finalBalanceOut).sub(1);</span>
+    }
+&nbsp;
+    // Computes how many tokens must be sent to a pool if `tokenAmountOut` are sent given the
+    // current balances, using the Newton-Raphson approximation.
+    // The amplification parameter equals: A n^(n-1)
+<span class="fstat-no" title="function not covered" >    function _calcInGivenOut(</span>
+        uint256 amplificationParameter,
+        uint256[] memory balances,
+        uint256 tokenIndexIn,
+        uint256 tokenIndexOut,
+        uint256 tokenAmountOut
+    ) internal pure returns (uint256) {
+        /**************************************************************************************************************
+        // inGivenOut token x for y - polynomial equation to solve                                                   //
+        // ax = amount in to calculate                                                                               //
+        // bx = balance token in                                                                                     //
+        // x = bx + ax (finalBalanceIn)                                                                              //
+        // D = invariant                                                D                     D^(n+1)                //
+        // A = amplification coefficient               x^2 + ( S - ----------  - D) * x -  ------------- = 0         //
+        // n = number of tokens                                     (A * n^n)               A * n^2n * P             //
+        // S = sum of final balances but x                                                                           //
+        // P = product of final balances but x                                                                       //
+        **************************************************************************************************************/
+&nbsp;
+        // Amount in, so we round up overall.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 invariant = _calculateInvariant(amplificationParameter, balances);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        balances[tokenIndexOut] = balances[tokenIndexOut].sub(tokenAmountOut)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 finalBalanceIn = _getTokenBalanceGivenInvariantAndAllOtherBalances(</span>
+            amplificationParameter,
+            balances,
+            invariant,
+            tokenIndexIn
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        balances[tokenIndexOut] = balances[tokenIndexOut].add(tokenAmountOut)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return finalBalanceIn.sub(balances[tokenIndexIn]).add(1);</span>
+    }
+&nbsp;
+    /*
+    TODO: document it correctly
+    Flow of calculations:
+    amountsTokenIn -&gt; amountsInProportional -&gt;
+    amountsInPercentageExcess -&gt; amountsInAfterFee -&gt; newInvariant -&gt; amountBPTOut
+    TODO: remove equations below and save them to Notion documentation
+    amountInPercentageExcess = 1 - amountInProportional/amountIn (if amountIn&gt;amountInProportional)
+    amountInAfterFee = amountIn * (1 - swapFeePercentage * amountInPercentageExcess)
+    amountInAfterFee = amountIn - fee amount
+    fee amount = (amountIn - amountInProportional) * swapFeePercentage
+    amountInAfterFee = amountIn - (amountIn - amountInProportional) * swapFeePercentage
+    amountInAfterFee = amountIn * (1 - (1 - amountInProportional/amountIn) * swapFeePercentage)
+    amountInAfterFee = amountIn * (1 - amountInPercentageExcess * swapFeePercentage)
+    */
+<span class="fstat-no" title="function not covered" >    function _calcBptOutGivenExactTokensIn(</span>
+        uint256 amp,
+        uint256[] memory balances,
+        uint256[] memory amountsIn,
+        uint256 bptTotalSupply,
+        uint256 swapFeePercentage
+    ) internal pure returns (uint256) {
+        // BPT out, so we round down overall.
+&nbsp;
+        // Get current invariant
+<span class="cstat-no" title="statement not covered" >        uint256 currentInvariant = _calculateInvariant(amp, balances);</span>
+&nbsp;
+        // First loop calculates the sum of all token balances, which will be used to calculate
+        // the current weights of each token, relative to this sum
+<span class="cstat-no" title="statement not covered" >        uint256 sumBalances = 0;</span>
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; balances.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            sumBalances = sumBalances.add(balances[i])</span>;
+        }
+&nbsp;
+        // Calculate the weighted balance ratio without considering fees
+<span class="cstat-no" title="statement not covered" >        uint256[] memory tokenBalanceRatiosWithoutFee = new uint256[](amountsIn.length);</span>
+        // The weighted sum of token balance ratios without fee
+<span class="cstat-no" title="statement not covered" >        uint256 weightedBalanceRatio = 0;</span>
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; balances.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            uint256 currentWeight = balances[i].divDown(sumBalances);</span>
+<span class="cstat-no" title="statement not covered" >            tokenBalanceRatiosWithoutFee[i] = balances[i].add(amountsIn[i]).divDown(balances[i])</span>;
+<span class="cstat-no" title="statement not covered" >            weightedBalanceRatio = weightedBalanceRatio.add(tokenBalanceRatiosWithoutFee[i].mulDown(currentWeight))</span>;
+        }
+&nbsp;
+        // Second loop calculates new amounts in, taking into account the fee on the percentage excess
+<span class="cstat-no" title="statement not covered" >        uint256[] memory newBalances = new uint256[](balances.length);</span>
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; balances.length; i++) {</span>
+            // Percentage of the amount supplied that will be implicitly swapped for other tokens in the pool
+<span class="cstat-no" title="statement not covered" >            uint256 tokenBalancePercentageExcess;</span>
+            // Some tokens might have amounts supplied in excess of a 'balanced' join: these are identified if
+            // the token's balance ratio without fee is larger than the weighted balance ratio, and swap fees are
+            // charged on the swap amount
+<span class="cstat-no" title="statement not covered" >            if (weightedBalanceRatio &gt;= tokenBalanceRatiosWithoutFee[i]) {</span>
+<span class="cstat-no" title="statement not covered" >                tokenBalancePercentageExcess = 0</span>;
+            } else {
+<span class="cstat-no" title="statement not covered" >                tokenBalancePercentageExcess = tokenBalanceRatiosWithoutFee[i].sub(weightedBalanceRatio).divUp(</span>
+                    tokenBalanceRatiosWithoutFee[i].sub(FixedPoint.ONE)
+                );
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            uint256 swapFeeExcess = swapFeePercentage.mulUp(tokenBalancePercentageExcess);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            uint256 amountInAfterFee = amountsIn[i].mulDown(swapFeeExcess.complement());</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            newBalances[i] = balances[i].add(amountInAfterFee)</span>;
+        }
+&nbsp;
+        // get the new invariant, taking swap fees into account
+<span class="cstat-no" title="statement not covered" >        uint256 newInvariant = _calculateInvariant(amp, newBalances);</span>
+&nbsp;
+        // return amountBPTOut
+<span class="cstat-no" title="statement not covered" >        return bptTotalSupply.mulDown(newInvariant.divDown(currentInvariant).sub(FixedPoint.ONE));</span>
+    }
+&nbsp;
+    /*
+    TODO: document it correctly
+    Flow of calculations:
+    amountBPTOut -&gt; newInvariant -&gt; (amountInProportional, amountInAfterFee) -&gt;
+    amountInPercentageExcess -&gt; amountIn
+    */
+<span class="fstat-no" title="function not covered" >    function _calcTokenInGivenExactBptOut(</span>
+        uint256 amp,
+        uint256[] memory balances,
+        uint256 tokenIndex,
+        uint256 bptAmountOut,
+        uint256 bptTotalSupply,
+        uint256 swapFeePercentage
+    ) internal pure returns (uint256) {
+        // Token in, so we round up overall.
+&nbsp;
+        // Get the current invariant
+<span class="cstat-no" title="statement not covered" >        uint256 currentInvariant = _calculateInvariant(amp, balances);</span>
+&nbsp;
+        // Calculate new invariant
+<span class="cstat-no" title="statement not covered" >        uint256 newInvariant = bptTotalSupply.add(bptAmountOut).divUp(bptTotalSupply).mulUp(currentInvariant);</span>
+&nbsp;
+        // First calculate the sum of all token balances, which will be used to calculate
+        // the current weight of each token
+<span class="cstat-no" title="statement not covered" >        uint256 sumBalances = 0;</span>
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; balances.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            sumBalances = sumBalances.add(balances[i])</span>;
+        }
+&nbsp;
+        // get amountInAfterFee
+<span class="cstat-no" title="statement not covered" >        uint256 newBalanceTokenIndex = _getTokenBalanceGivenInvariantAndAllOtherBalances(</span>
+            amp,
+            balances,
+            newInvariant,
+            tokenIndex
+        );
+<span class="cstat-no" title="statement not covered" >        uint256 amountInAfterFee = newBalanceTokenIndex.sub(balances[tokenIndex]);</span>
+&nbsp;
+        // Get tokenBalancePercentageExcess
+<span class="cstat-no" title="statement not covered" >        uint256 currentWeight = balances[tokenIndex].divDown(sumBalances);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 tokenBalancePercentageExcess = currentWeight.complement();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 swapFeeExcess = swapFeePercentage.mulUp(tokenBalancePercentageExcess);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return amountInAfterFee.divUp(swapFeeExcess.complement());</span>
+    }
+&nbsp;
+    /*
+    Flow of calculations:
+    amountsTokenOut -&gt; amountsOutProportional -&gt;
+    amountOutPercentageExcess -&gt; amountOutBeforeFee -&gt; newInvariant -&gt; amountBPTIn
+    */
+<span class="fstat-no" title="function not covered" >    function _calcBptInGivenExactTokensOut(</span>
+        uint256 amp,
+        uint256[] memory balances,
+        uint256[] memory amountsOut,
+        uint256 bptTotalSupply,
+        uint256 swapFee
+    ) internal pure returns (uint256) {
+        // BPT in, so we round up overall.
+&nbsp;
+        // Get the current invariant
+<span class="cstat-no" title="statement not covered" >        uint256 currentInvariant = _calculateInvariant(amp, balances);</span>
+&nbsp;
+        // First loop calculates the sum of all token balances, which will be used to calculate
+        // the current weights of each token relative to this sum
+<span class="cstat-no" title="statement not covered" >        uint256 sumBalances = 0;</span>
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; balances.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            sumBalances = sumBalances.add(balances[i])</span>;
+        }
+&nbsp;
+        // Calculate the weighted balance ratio without considering fees
+<span class="cstat-no" title="statement not covered" >        uint256[] memory tokenBalanceRatiosWithoutFee = new uint256[](amountsOut.length);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 weightedBalanceRatio = 0;</span>
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; balances.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            uint256 currentWeight = balances[i].divUp(sumBalances);</span>
+<span class="cstat-no" title="statement not covered" >            tokenBalanceRatiosWithoutFee[i] = balances[i].sub(amountsOut[i]).divUp(balances[i])</span>;
+<span class="cstat-no" title="statement not covered" >            weightedBalanceRatio = weightedBalanceRatio.add(tokenBalanceRatiosWithoutFee[i].mulUp(currentWeight))</span>;
+        }
+&nbsp;
+        // Second loop calculates new amounts in, taking into account the fee on the percentage excess
+<span class="cstat-no" title="statement not covered" >        uint256[] memory newBalances = new uint256[](balances.length);</span>
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; balances.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            uint256 tokenBalancePercentageExcess;</span>
+            // Compare each tokenBalanceRatioWithoutFee to the total weighted ratio (weightedBalanceRatio), and
+            // decrease the fee by the excess amount
+<span class="cstat-no" title="statement not covered" >            if (weightedBalanceRatio &lt;= tokenBalanceRatiosWithoutFee[i]) {</span>
+<span class="cstat-no" title="statement not covered" >                tokenBalancePercentageExcess = 0</span>;
+            } else {
+<span class="cstat-no" title="statement not covered" >                tokenBalancePercentageExcess = weightedBalanceRatio.sub(tokenBalanceRatiosWithoutFee[i]).divUp(</span>
+                    tokenBalanceRatiosWithoutFee[i].complement()
+                );
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            uint256 swapFeeExcess = swapFee.mulUp(tokenBalancePercentageExcess);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            uint256 amountOutBeforeFee = amountsOut[i].divUp(swapFeeExcess.complement());</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            newBalances[i] = balances[i].sub(amountOutBeforeFee)</span>;
+        }
+&nbsp;
+        // get the new invariant, taking into account swap fees
+<span class="cstat-no" title="statement not covered" >        uint256 newInvariant = _calculateInvariant(amp, newBalances);</span>
+&nbsp;
+        // return amountBPTIn
+<span class="cstat-no" title="statement not covered" >        return bptTotalSupply.mulUp(newInvariant.divUp(currentInvariant).complement());</span>
+    }
+&nbsp;
+    /*
+    TODO: document it correctly
+    Flow of calculations:
+    amountBPTin -&gt; newInvariant -&gt; (amountOutProportional, amountOutBeforeFee) -&gt;
+    amountOutPercentageExcess -&gt; amountOut
+    */
+<span class="fstat-no" title="function not covered" >    function _calcTokenOutGivenExactBptIn(</span>
+        uint256 amp,
+        uint256[] memory balances,
+        uint256 tokenIndex,
+        uint256 bptAmountIn,
+        uint256 bptTotalSupply,
+        uint256 swapFeePercentage
+    ) internal pure returns (uint256) {
+        // Get the current invariant
+<span class="cstat-no" title="statement not covered" >        uint256 currentInvariant = _calculateInvariant(amp, balances);</span>
+        // Calculate the new invariant
+<span class="cstat-no" title="statement not covered" >        uint256 newInvariant = bptTotalSupply.sub(bptAmountIn).divUp(bptTotalSupply).mulUp(currentInvariant);</span>
+&nbsp;
+        // First calculate the sum of all token balances, which will be used to calculate
+        // the current weight of each token
+<span class="cstat-no" title="statement not covered" >        uint256 sumBalances = 0;</span>
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; balances.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            sumBalances = sumBalances.add(balances[i])</span>;
+        }
+&nbsp;
+        // get amountOutBeforeFee
+<span class="cstat-no" title="statement not covered" >        uint256 newBalanceTokenIndex = _getTokenBalanceGivenInvariantAndAllOtherBalances(</span>
+            amp,
+            balances,
+            newInvariant,
+            tokenIndex
+        );
+<span class="cstat-no" title="statement not covered" >        uint256 amountOutBeforeFee = balances[tokenIndex].sub(newBalanceTokenIndex);</span>
+&nbsp;
+        // Calculate tokenBalancePercentageExcess
+<span class="cstat-no" title="statement not covered" >        uint256 currentWeight = balances[tokenIndex].divDown(sumBalances);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 tokenBalancePercentageExcess = currentWeight.complement();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 swapFeeExcess = swapFeePercentage.mulUp(tokenBalancePercentageExcess);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return amountOutBeforeFee.mulDown(swapFeeExcess.complement());</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function _calcTokensOutGivenExactBptIn(</span>
+        uint256[] memory balances,
+        uint256 bptAmountIn,
+        uint256 bptTotalSupply
+    ) internal pure returns (uint256[] memory) {
+        /**********************************************************************************************
+        // exactBPTInForTokensOut                                                                    //
+        // (per token)                                                                               //
+        // aO = tokenAmountOut             /        bptIn         \                                  //
+        // b = tokenBalance      a0 = b * | ---------------------  |                                 //
+        // bptIn = bptAmountIn             \     bptTotalSupply    /                                 //
+        // bpt = bptTotalSupply                                                                      //
+        **********************************************************************************************/
+&nbsp;
+        // Since we're computing an amount out, we round down overall. This means rounding down on both the
+        // multiplication and division.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 bptRatio = bptAmountIn.divDown(bptTotalSupply);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256[] memory amountsOut = new uint256[](balances.length);</span>
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; balances.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            amountsOut[i] = balances[i].mulDown(bptRatio)</span>;
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return amountsOut;</span>
+    }
+&nbsp;
+    // The amplification parameter equals: A n^(n-1)
+<span class="fstat-no" title="function not covered" >    function _calcDueTokenProtocolSwapFeeAmount(</span>
+        uint256 amplificationParameter,
+        uint256[] memory balances,
+        uint256 lastInvariant,
+        uint256 tokenIndex,
+        uint256 protocolSwapFeePercentage
+    ) internal pure returns (uint256) {
+        /**************************************************************************************************************
+        // oneTokenSwapFee - polynomial equation to solve                                                            //
+        // af = fee amount to calculate in one token                                                                 //
+        // bf = balance of fee token                                                                                 //
+        // f = bf - af (finalBalanceFeeToken)                                                                        //
+        // D = old invariant                                            D                     D^(n+1)                //
+        // A = amplification coefficient               f^2 + ( S - ----------  - D) * f -  ------------- = 0         //
+        // n = number of tokens                                    (A * n^n)               A * n^2n * P              //
+        // S = sum of final balances but f                                                                           //
+        // P = product of final balances but f                                                                       //
+        **************************************************************************************************************/
+&nbsp;
+        // Protocol swap fee amount, so we round down overall.
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 finalBalanceFeeToken = _getTokenBalanceGivenInvariantAndAllOtherBalances(</span>
+            amplificationParameter,
+            balances,
+            lastInvariant,
+            tokenIndex
+        );
+&nbsp;
+        // Result is rounded down
+<span class="cstat-no" title="statement not covered" >        uint256 accumulatedTokenSwapFees = balances[tokenIndex] &gt; finalBalanceFeeToken</span>
+            ? balances[tokenIndex].sub(finalBalanceFeeToken)
+            : 0;
+<span class="cstat-no" title="statement not covered" >        return accumulatedTokenSwapFees.mulDown(protocolSwapFeePercentage).divDown(FixedPoint.ONE);</span>
+    }
+&nbsp;
+    // Private functions
+&nbsp;
+    // This function calculates the balance of a given token (tokenIndex)
+    // given all the other balances and the invariant
+<span class="fstat-no" title="function not covered" >    function _getTokenBalanceGivenInvariantAndAllOtherBalances(</span>
+        uint256 amplificationParameter,
+        uint256[] memory balances,
+        uint256 invariant,
+        uint256 tokenIndex
+    ) private pure returns (uint256) {
+        // Rounds result up overall
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 ampTimesTotal = Math.mul(amplificationParameter, balances.length);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 sum = balances[0];</span>
+<span class="cstat-no" title="statement not covered" >        uint256 P_D = Math.mul(balances.length, balances[0]);</span>
+<span class="cstat-no" title="statement not covered" >        for (uint256 j = 1; j &lt; balances.length; j++) {</span>
+<span class="cstat-no" title="statement not covered" >            P_D = Math.divDown(Math.mul(Math.mul(P_D, balances[j]), balances.length), invariant)</span>;
+<span class="cstat-no" title="statement not covered" >            sum = sum.add(balances[j])</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        sum = sum.sub(balances[tokenIndex])</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 c = Math.divUp(Math.mul(invariant, invariant), ampTimesTotal);</span>
+        // We remove the balance fromm c by multiplying it
+<span class="cstat-no" title="statement not covered" >        c = c.mulUp(balances[tokenIndex]).divUp(P_D)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 b = sum.add(invariant.divDown(ampTimesTotal));</span>
+&nbsp;
+        // We iterate to find the balance
+<span class="cstat-no" title="statement not covered" >        uint256 prevTokenBalance = 0;</span>
+        // We multiply the first iteration outside the loop with the invariant to set the value of the
+        // initial approximation.
+<span class="cstat-no" title="statement not covered" >        uint256 tokenBalance = invariant.mulUp(invariant).add(c).divUp(invariant.add(b));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; 255; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            prevTokenBalance = tokenBalance</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            tokenBalance = tokenBalance.mulUp(tokenBalance).add(c).divUp(</span>
+                Math.mul(tokenBalance, 2).add(b).sub(invariant)
+            );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (tokenBalance &gt; prevTokenBalance) {</span>
+<span class="cstat-no" title="statement not covered" >                if (tokenBalance.sub(prevTokenBalance) &lt;= 1) {</span>
+                    break;
+                }
+            } else <span class="cstat-no" title="statement not covered" >if (prevTokenBalance.sub(tokenBalance) &lt;= 1) {</span>
+                break;
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return tokenBalance;</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Aug 28 2021 15:51:37 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
