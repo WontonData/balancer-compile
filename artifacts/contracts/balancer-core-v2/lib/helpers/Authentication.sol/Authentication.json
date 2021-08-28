@@ -7,11 +7,11 @@
       "inputs": [
         {
           "internalType": "bytes32",
-          "name": "c__0x4c26eefc",
+          "name": "c__0x07990f2b",
           "type": "bytes32"
         }
       ],
-      "name": "c_0x4c26eefc",
+      "name": "c_0x07990f2b",
       "outputs": [],
       "stateMutability": "pure",
       "type": "function"

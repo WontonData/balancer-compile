@@ -1,5 +1,5 @@
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/AssetHelpers.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/helpers/AssetHelpers.sol
 FN:31,constructor
 FN:36,_WETH
 FN:43,_isETH
@@ -29,7 +29,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/Authentication.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/helpers/Authentication.sol
 FN:41,constructor
 FN:48,authenticate
 FN:56,_authenticateCaller
@@ -52,7 +52,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/BalancerHelpers.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/helpers/BalancerHelpers.sol
 FN:43,constructor
 FN:47,queryJoin
 FN:68,queryExit
@@ -85,7 +85,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/IAuthentication.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/helpers/IAuthentication.sol
 FNF:0
 FNH:0
 LF:0
@@ -94,7 +94,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/InputHelpers.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/helpers/InputHelpers.sol
 FN:24,ensureInputLengthMatch
 FN:28,ensureInputLengthMatch
 FN:36,ensureArrayIsSorted
@@ -130,7 +130,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/ISignaturesValidator.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/helpers/ISignaturesValidator.sol
 FNF:0
 FNH:0
 LF:0
@@ -139,7 +139,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/ITemporarilyPausable.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/helpers/ITemporarilyPausable.sol
 FNF:0
 FNH:0
 LF:0
@@ -148,7 +148,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/SignaturesValidator.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/helpers/SignaturesValidator.sol
 FN:37,constructor
 FN:41,getDomainSeparator
 FN:45,getNextNonce
@@ -204,7 +204,7 @@ BRF:6
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/TemporarilyPausable.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/helpers/TemporarilyPausable.sol
 FN:48,constructor
 FN:61,whenNotPaused
 FN:70,getPausedState
@@ -250,7 +250,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/helpers/WordCodec.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/helpers/WordCodec.sol
 FN:44,insertBoolean
 FN:61,insertUint10
 FN:76,insertUint31
@@ -308,7 +308,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/math/FixedPoint.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/math/FixedPoint.sol
 FN:29,add
 FN:37,sub
 FN:45,mulDown
@@ -378,7 +378,7 @@ BRF:8
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/math/LogExpMath.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/math/LogExpMath.sol
 FN:93,pow
 FN:146,exp
 FN:286,log
@@ -628,7 +628,7 @@ BRF:60
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/math/Math.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/math/Math.sol
 FN:15,add
 FN:24,add
 FN:33,sub
@@ -680,7 +680,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/AccessControl.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/AccessControl.sol
 FN:86,hasRole
 FN:94,getRoleMemberCount
 FN:110,getRoleMember
@@ -732,7 +732,7 @@ BRF:4
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/Address.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/Address.sol
 FN:28,isContract
 FN:57,sendValue
 FNF:2
@@ -751,7 +751,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/Create2.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/Create2.sol
 FN:31,deploy
 FN:47,computeAddress
 FN:55,computeAddress
@@ -781,7 +781,7 @@ BRF:6
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/EIP712.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/EIP712.sol
 FN:44,constructor
 FN:53,_domainSeparatorV4
 FN:72,_hashTypedDataV4
@@ -805,7 +805,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/EnumerableMap.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/EnumerableMap.sol
 FN:65,set
 FN:96,unchecked_setAt
 FN:109,remove
@@ -871,7 +871,7 @@ BRF:4
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/EnumerableSet.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/EnumerableSet.sol
 FN:54,add
 FN:72,remove
 FN:110,contains
@@ -917,7 +917,7 @@ BRF:4
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/ERC20.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/ERC20.sol
 FN:56,constructor
 FN:65,name
 FN:73,symbol
@@ -1003,7 +1003,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/ERC20Burnable.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/ERC20Burnable.sol
 FN:20,burn
 FN:35,burnFrom
 FNF:2
@@ -1020,7 +1020,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/IERC20.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/IERC20.sol
 FNF:0
 FNH:0
 LF:0
@@ -1029,7 +1029,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/IERC20Permit.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/IERC20Permit.sol
 FNF:0
 FNH:0
 LF:0
@@ -1038,7 +1038,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/ReentrancyGuard.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/ReentrancyGuard.sol
 FN:44,constructor
 FN:55,nonReentrant
 FN:61,_enterNonReentrant
@@ -1062,7 +1062,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/SafeCast.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/SafeCast.sol
 FN:30,toInt256
 FNF:1
 FNH:0
@@ -1075,7 +1075,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/SafeERC20.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/SafeERC20.sol
 FN:23,safeTransfer
 FN:31,safeTransferFrom
 FN:46,_callOptionalReturn
@@ -1095,7 +1095,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/lib/openzeppelin/SafeMath.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/lib/openzeppelin/SafeMath.sol
 FN:31,add
 FN:48,sub
 FN:62,sub
@@ -1117,7 +1117,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/BalancerPoolToken.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/BalancerPoolToken.sol
 FN:58,constructor
 FN:65,allowance
 FN:69,balanceOf
@@ -1219,7 +1219,7 @@ BRF:4
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/BaseGeneralPool.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/BaseGeneralPool.sol
 FN:47,constructor
 FN:54,onSwap
 FN:69,_swapGivenIn
@@ -1252,7 +1252,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/BaseMinimalSwapInfoPool.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/BaseMinimalSwapInfoPool.sol
 FN:47,constructor
 FN:54,onSwap
 FNF:2
@@ -1282,7 +1282,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/BasePool.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/BasePool.sol
 FN:109,constructor
 FN:155,getVault
 FN:159,getPoolId
@@ -1482,7 +1482,7 @@ BRF:36
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/BasePoolAuthorization.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/BasePoolAuthorization.sol
 FN:37,constructor
 FN:41,getOwner
 FN:45,getAuthorizer
@@ -1510,7 +1510,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/factories/BasePoolFactory.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/factories/BasePoolFactory.sol
 FN:34,constructor
 FN:41,getVault
 FN:48,isPoolFromFactory
@@ -1532,7 +1532,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/factories/FactoryWidePauseWindow.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/factories/FactoryWidePauseWindow.sol
 FN:35,constructor
 FN:46,getPauseConfiguration
 FNF:2
@@ -1554,7 +1554,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/IPriceOracle.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/IPriceOracle.sol
 FNF:0
 FNH:0
 LF:0
@@ -1563,7 +1563,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/oracle/Buffer.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/oracle/Buffer.sol
 FN:25,prev
 FN:32,next
 FN:39,add
@@ -1584,7 +1584,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/oracle/IWeightedPoolPriceOracle.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/oracle/IWeightedPoolPriceOracle.sol
 FNF:0
 FNH:0
 LF:0
@@ -1593,7 +1593,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/oracle/PoolPriceOracle.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/oracle/PoolPriceOracle.sol
 FN:48,getSample
 FN:68,getTotalSamples
 FN:81,_processPriceData
@@ -1673,7 +1673,7 @@ BRF:8
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/oracle/Samples.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/oracle/Samples.sol
 FN:65,update
 FN:95,instant
 FN:109,accumulator
@@ -1742,7 +1742,7 @@ BRF:8
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/stable/StableMath.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/stable/StableMath.sol
 FN:36,_calculateInvariant
 FN:88,_calcOutGivenIn
 FN:128,_calcInGivenOut
@@ -1911,7 +1911,7 @@ BRF:18
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/stable/StablePool.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/stable/StablePool.sol
 FN:57,constructor
 FN:67,getAmplificationParameter
 FN:80,_onSwapGivenIn
@@ -2058,7 +2058,7 @@ BRF:14
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/stable/StablePoolFactory.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/stable/StablePoolFactory.sol
 FN:26,constructor
 FN:33,create
 FNF:2
@@ -2075,7 +2075,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/stable/StablePoolUserDataHelpers.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/stable/StablePoolUserDataHelpers.sol
 FN:22,joinKind
 FN:26,exitKind
 FN:30,initialAmountsIn
@@ -2108,7 +2108,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedMath.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/weighted/WeightedMath.sol
 FN:47,_calculateInvariant
 FN:69,_calcOutGivenIn
 FN:104,_calcInGivenOut
@@ -2222,7 +2222,7 @@ BRF:8
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedOracleMath.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/weighted/WeightedOracleMath.sol
 FN:35,_calcLogSpotPrice
 FN:56,_calcLogBPTPrice
 FN:86,_toLowResLog
@@ -2246,7 +2246,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedPool.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/weighted/WeightedPool.sol
 FN:72,constructor
 FN:105,_normalizedWeight
 FN:120,_normalizedWeights
@@ -2464,7 +2464,7 @@ BRF:46
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedPool2Tokens.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/weighted/WeightedPool2Tokens.sol
 FN:81,onlyVault
 FN:111,constructor
 FN:149,getVault
@@ -2835,7 +2835,7 @@ BRF:28
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedPool2TokensFactory.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/weighted/WeightedPool2TokensFactory.sol
 FN:26,constructor
 FN:33,create
 FNF:2
@@ -2853,7 +2853,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedPool2TokensMiscData.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/weighted/WeightedPool2TokensMiscData.sol
 FN:50,logInvariant
 FN:57,logTotalSupply
 FN:64,oracleSampleCreationTimestamp
@@ -2898,7 +2898,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedPoolFactory.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/weighted/WeightedPoolFactory.sol
 FN:26,constructor
 FN:33,create
 FNF:2
@@ -2915,7 +2915,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/pools/weighted/WeightedPoolUserDataHelpers.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/weighted/WeightedPoolUserDataHelpers.sol
 FN:22,joinKind
 FN:26,exitKind
 FN:32,initialAmountsIn
@@ -2948,7 +2948,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/BalanceAllocationMock.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/BalanceAllocationMock.sol
 FN:22,total
 FN:26,totals
 FN:30,cash
@@ -3008,7 +3008,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/EthForceSender.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/EthForceSender.sol
 FN:18,constructor
 FNF:1
 FNH:0
@@ -3020,7 +3020,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/lib/BalancerErrorsMock.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/lib/BalancerErrorsMock.sol
 FN:20,fail
 FNF:1
 FNH:0
@@ -3032,7 +3032,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/lib/EnumerableMapMock.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/lib/EnumerableMapMock.sol
 FN:17,contains
 FN:21,set
 FN:26,unchecked_indexOf
@@ -3073,7 +3073,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/lib/ReentrancyAttack.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/lib/ReentrancyAttack.sol
 FN:6,callSender
 FNF:1
 FNH:0
@@ -3088,7 +3088,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/lib/ReentrancyMock.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/lib/ReentrancyMock.sol
 FN:11,constructor
 FN:15,callback
 FN:19,countLocalRecursive
@@ -3128,7 +3128,7 @@ BRF:6
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/lib/SignaturesValidatorMock.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/lib/SignaturesValidatorMock.sol
 FN:15,constructor
 FN:19,decodeCalldata
 FN:23,authenticateCall
@@ -3159,7 +3159,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/lib/TemporarilyPausableMock.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/lib/TemporarilyPausableMock.sol
 FN:21,constructor
 FN:24,setPaused
 FNF:2
@@ -3173,7 +3173,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockAssetTransfersHandler.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/MockAssetTransfersHandler.sol
 FN:30,constructor
 FN:32,receiveAsset
 FN:41,sendAsset
@@ -3205,7 +3205,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockBalancerPoolToken.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/MockBalancerPoolToken.sol
 FN:20,constructor
 FN:22,mint
 FN:26,burn
@@ -3222,7 +3222,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockBasePool.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/MockBasePool.sol
 FN:42,constructor
 FN:45,_onInitializePool
 FN:52,_onJoinPool
@@ -3239,7 +3239,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockFlashLoanRecipient.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/MockFlashLoanRecipient.sol
 FN:35,constructor
 FN:42,setRepayLoan
 FN:46,setRepayInExcess
@@ -3286,7 +3286,7 @@ BRF:8
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockInternalBalanceRelayer.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/MockInternalBalanceRelayer.sol
 FN:26,constructor
 FN:30,depositAndWithdraw
 FN:56,_buildUserBalanceOp
@@ -3310,7 +3310,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockPool.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/MockPool.sol
 FN:31,constructor
 FN:36,getVault
 FN:40,getPoolId
@@ -3352,7 +3352,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockPoolFactory.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/MockPoolFactory.sol
 FN:23,getPoolId
 FN:29,constructor
 FN:33,create
@@ -3371,7 +3371,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockStableMath.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/MockStableMath.sol
 FN:20,invariant
 FN:24,outGivenIn
 FN:34,inGivenOut
@@ -3407,7 +3407,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockVault.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/MockVault.sol
 FN:44,constructor
 FN:48,getAuthorizer
 FN:52,getPoolTokens
@@ -3463,7 +3463,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockWeightedMath.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/MockWeightedMath.sol
 FN:20,invariant
 FN:24,outGivenIn
 FN:34,inGivenOut
@@ -3499,7 +3499,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/MockWeightedOracleMath.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/MockWeightedOracleMath.sol
 FN:20,toLowResLog
 FN:24,fromLowResLog
 FN:28,calcLogSpotPrice
@@ -3520,7 +3520,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/Multicall.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/Multicall.sol
 FN:18,aggregate
 FN:29,getEthBalance
 FN:33,getBlockHash
@@ -3560,7 +3560,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/PoolPriceOracleMock.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/PoolPriceOracleMock.sol
 FN:37,encode
 FN:50,decode
 FN:63,mockSample
@@ -3599,7 +3599,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/TestToken.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/TestToken.sol
 FN:29,constructor
 FN:35,mint
 FNF:2
@@ -3619,7 +3619,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/TokenFactory.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/TokenFactory.sol
 FN:31,constructor
 FN:35,getTotalTokens
 FN:39,getTokens
@@ -3655,7 +3655,7 @@ BRF:4
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/WeightedPool2TokensMock.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/WeightedPool2TokensMock.sol
 FN:34,constructor
 FN:36,mockOracleDisabled
 FN:40,mockOracleIndex
@@ -3683,7 +3683,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/test/WETH.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/test/WETH.sol
 FN:36,constructor
 FN:45,deposit
 FN:50,withdraw
@@ -3743,7 +3743,7 @@ BRF:10
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/AssetManagers.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/AssetManagers.sol
 FN:43,managePoolBalance
 FN:75,_performPoolManagementOperation
 FN:98,_withdrawPoolBalance
@@ -3831,7 +3831,7 @@ BRF:24
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/AssetTransfersHandler.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/AssetTransfersHandler.sol
 FN:44,_receiveAsset
 FN:88,_sendAsset
 FN:128,_handleRemainingEth
@@ -3889,7 +3889,7 @@ BRF:16
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/Authorizer.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/Authorizer.sol
 FN:31,constructor
 FN:35,canPerform
 FN:47,grantRoles
@@ -3922,7 +3922,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/balances/BalanceAllocation.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/balances/BalanceAllocation.sol
 FN:56,total
 FN:65,cash
 FN:73,managed
@@ -4022,7 +4022,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/balances/GeneralPoolsBalance.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/balances/GeneralPoolsBalance.sol
 FN:51,_registerGeneralPoolTokens
 FN:73,_deregisterGeneralPoolTokens
 FN:92,_setGeneralPoolBalances
@@ -4084,7 +4084,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/balances/MinimalSwapInfoPoolsBalance.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/balances/MinimalSwapInfoPoolsBalance.sol
 FN:52,_registerMinimalSwapInfoPoolTokens
 FN:74,_deregisterMinimalSwapInfoPoolTokens
 FN:95,_setMinimalSwapInfoPoolBalances
@@ -4150,7 +4150,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/balances/TwoTokenPoolsBalance.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/balances/TwoTokenPoolsBalance.sol
 FN:78,_registerTwoTokenPoolTokens
 FN:111,_deregisterTwoTokenPoolTokens
 FN:136,_setTwoTokenPoolCashBalances
@@ -4263,7 +4263,7 @@ BRF:10
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/Fees.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/Fees.sol
 FN:37,constructor
 FN:41,getProtocolFeesCollector
 FN:48,_getProtocolSwapFeePercentage
@@ -4291,7 +4291,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/FlashLoans.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/FlashLoans.sol
 FN:42,flashLoan
 FNF:1
 FNH:0
@@ -4325,7 +4325,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IAsset.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/interfaces/IAsset.sol
 FNF:0
 FNH:0
 LF:0
@@ -4334,7 +4334,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IAuthorizer.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/interfaces/IAuthorizer.sol
 FNF:0
 FNH:0
 LF:0
@@ -4343,7 +4343,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IBasePool.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/interfaces/IBasePool.sol
 FNF:0
 FNH:0
 LF:0
@@ -4352,7 +4352,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IFlashLoanRecipient.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/interfaces/IFlashLoanRecipient.sol
 FNF:0
 FNH:0
 LF:0
@@ -4361,7 +4361,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IGeneralPool.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/interfaces/IGeneralPool.sol
 FNF:0
 FNH:0
 LF:0
@@ -4370,7 +4370,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IMinimalSwapInfoPool.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/interfaces/IMinimalSwapInfoPool.sol
 FNF:0
 FNH:0
 LF:0
@@ -4379,7 +4379,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IPoolSwapStructs.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/interfaces/IPoolSwapStructs.sol
 FNF:0
 FNH:0
 LF:0
@@ -4388,7 +4388,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IVault.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/interfaces/IVault.sol
 FNF:0
 FNH:0
 LF:0
@@ -4397,7 +4397,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/interfaces/IWETH.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/interfaces/IWETH.sol
 FNF:0
 FNH:0
 LF:0
@@ -4406,7 +4406,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/PoolBalances.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/PoolBalances.sol
 FN:48,joinPool
 FN:56,exitPool
 FN:79,_toPoolBalanceChange
@@ -4492,7 +4492,7 @@ BRF:6
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/PoolRegistry.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/PoolRegistry.sol
 FN:39,withRegisteredPool
 FN:47,onlyPool
 FN:55,_ensureRegisteredPool
@@ -4542,7 +4542,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/PoolTokens.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/PoolTokens.sol
 FN:33,registerTokens
 FN:63,deregisterTokens
 FN:89,getPoolTokens
@@ -4616,7 +4616,7 @@ BRF:16
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/ProtocolFeesCollector.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/ProtocolFeesCollector.sol
 FN:60,constructor
 FN:69,withdrawCollectedFees
 FN:79,setSwapFeePercentage
@@ -4665,7 +4665,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/Swaps.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/Swaps.sol
 FN:67,swap
 FN:120,batchSwap
 FN:164,_tokenGiven
@@ -4856,7 +4856,7 @@ BRF:24
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/UserBalance.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/UserBalance.sol
 FN:47,getInternalBalance
 FN:59,manageUserBalance
 FN:119,_depositToInternalBalance
@@ -4958,7 +4958,7 @@ BRF:16
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/Vault.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/Vault.sol
 FN:66,constructor
 FN:70,setPaused
 FN:75,WETH
@@ -4975,7 +4975,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/lee/Code/Conflux-UMA/hardhat/contracts/balancer-core-v2/vault/VaultAuthorization.sol
+SF:/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/VaultAuthorization.sol
 FN:71,authenticateFor
 FN:79,constructor
 FN:84,setAuthorizer

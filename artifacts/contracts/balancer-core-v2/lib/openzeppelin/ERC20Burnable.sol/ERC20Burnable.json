@@ -155,11 +155,11 @@
       "inputs": [
         {
           "internalType": "bytes32",
-          "name": "c__0x7d6d6d0f",
+          "name": "c__0x08341a7f",
           "type": "bytes32"
         }
       ],
-      "name": "c_0x7d6d6d0f",
+      "name": "c_0x08341a7f",
       "outputs": [],
       "stateMutability": "pure",
       "type": "function"
@@ -168,11 +168,11 @@
       "inputs": [
         {
           "internalType": "bytes32",
-          "name": "c__0xbbeb5e42",
+          "name": "c__0x943f927c",
           "type": "bytes32"
         }
       ],
-      "name": "c_0xbbeb5e42",
+      "name": "c_0x943f927c",
       "outputs": [],
       "stateMutability": "pure",
       "type": "function"

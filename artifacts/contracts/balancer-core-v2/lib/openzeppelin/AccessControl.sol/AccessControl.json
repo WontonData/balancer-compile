@@ -95,11 +95,11 @@
       "inputs": [
         {
           "internalType": "bytes32",
-          "name": "c__0x2cc34d3d",
+          "name": "c__0x32655a30",
           "type": "bytes32"
         }
       ],
-      "name": "c_0x2cc34d3d",
+      "name": "c_0x32655a30",
       "outputs": [],
       "stateMutability": "pure",
       "type": "function"
