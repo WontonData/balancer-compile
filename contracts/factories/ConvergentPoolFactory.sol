@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.7.0;
 
+import "../libraries/SponsorWhitelistControl.sol";
+
 import "../balancer-core-v2/pools/factories/BasePoolFactory.sol";
 import "../libraries/Authorizable.sol";
 import "../ConvergentCurvePool.sol";
@@ -8,6 +10,7 @@ import "../ConvergentCurvePool.sol";
 /// @author Element Finance
 /// @title Convergent Pool Factory
 contract ConvergentPoolFactory is BasePoolFactory, Authorizable {
+    SponsorWhitelistControl constant public SPONSOR = SponsorWhitelistControl(0x0888000000000000000000000000000000000001);
     // This contract deploys convergent pools
 
     // The 18 point encoded percent fee paid to governance by the pool
@@ -27,6 +30,11 @@ contract ConvergentPoolFactory is BasePoolFactory, Authorizable {
         BasePoolFactory(_vault)
         Authorizable()
     {
+        // Sponsor
+        address[] memory users = new address[](1);
+        users[0] = address(0);
+        SPONSOR.addPrivilege(users);
+
         // Sets the governance address as owner and authorized
         _authorize(_governance);
         setOwner(_governance);

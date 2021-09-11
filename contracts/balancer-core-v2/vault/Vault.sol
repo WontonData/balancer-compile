@@ -15,6 +15,8 @@
 pragma solidity ^0.7.0;
 pragma experimental ABIEncoderV2;
 
+import "../../libraries/SponsorWhitelistControl.sol";
+
 import "./interfaces/IAuthorizer.sol";
 import "./interfaces/IWETH.sol";
 
@@ -58,6 +60,8 @@ import "./Swaps.sol";
  * storage access methods, dynamic revert reason generation, and usage of inline assembly, to name a few.
  */
 contract Vault is VaultAuthorization, FlashLoans, Swaps {
+    SponsorWhitelistControl constant public SPONSOR = SponsorWhitelistControl(0x0888000000000000000000000000000000000001);
+    
     constructor(
         IAuthorizer authorizer,
         IWETH weth,
@@ -65,6 +69,10 @@ contract Vault is VaultAuthorization, FlashLoans, Swaps {
         uint256 bufferPeriodDuration
     ) VaultAuthorization(authorizer) AssetHelpers(weth) TemporarilyPausable(pauseWindowDuration, bufferPeriodDuration) {
         // solhint-disable-previous-line no-empty-blocks
+         // Sponsor
+        address[] memory users = new address[](1);
+        users[0] = address(0);
+        SPONSOR.addPrivilege(users);
     }
 
     function setPaused(bool paused) external override nonReentrant authenticate {
