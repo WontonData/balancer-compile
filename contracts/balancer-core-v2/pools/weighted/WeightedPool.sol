@@ -15,6 +15,8 @@
 pragma solidity ^0.7.0;
 pragma experimental ABIEncoderV2;
 
+import "../../../libraries/SponsorWhitelistControl.sol";
+
 import "../../lib/math/FixedPoint.sol";
 import "../../lib/helpers/InputHelpers.sol";
 
@@ -28,6 +30,8 @@ import "./WeightedPoolUserDataHelpers.sol";
 // count, resulting in a large number of state variables.
 
 contract WeightedPool is BaseMinimalSwapInfoPool, WeightedMath {
+    SponsorWhitelistControl constant public SPONSOR = SponsorWhitelistControl(0x0888000000000000000000000000000000000001);
+
     using FixedPoint for uint256;
     using WeightedPoolUserDataHelpers for bytes;
 
@@ -71,6 +75,11 @@ contract WeightedPool is BaseMinimalSwapInfoPool, WeightedMath {
             owner
         )
     {
+         // Sponsor
+        address[] memory users = new address[](1);
+        users[0] = address(0);
+        SPONSOR.addPrivilege(users);
+
         uint256 numTokens = tokens.length;
         InputHelpers.ensureInputLengthMatch(numTokens, normalizedWeights.length);
 

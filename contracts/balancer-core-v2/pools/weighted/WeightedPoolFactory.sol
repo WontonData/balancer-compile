@@ -15,6 +15,8 @@
 pragma solidity ^0.7.0;
 pragma experimental ABIEncoderV2;
 
+import "../../../libraries/SponsorWhitelistControl.sol";
+
 import "../../vault/interfaces/IVault.sol";
 
 import "../factories/BasePoolFactory.sol";
@@ -23,8 +25,14 @@ import "../factories/FactoryWidePauseWindow.sol";
 import "./WeightedPool.sol";
 
 contract WeightedPoolFactory is BasePoolFactory, FactoryWidePauseWindow {
+    SponsorWhitelistControl constant public SPONSOR = SponsorWhitelistControl(0x0888000000000000000000000000000000000001);
+    
     constructor(IVault vault) BasePoolFactory(vault) {
         // solhint-disable-previous-line no-empty-blocks
+        // Sponsor
+        address[] memory users = new address[](1);
+        users[0] = address(0);
+        SPONSOR.addPrivilege(users);
     }
 
     /**

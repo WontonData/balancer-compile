@@ -2,6 +2,8 @@
 pragma solidity ^0.7.0;
 pragma experimental ABIEncoderV2;
 
+import "./libraries/SponsorWhitelistControl.sol";
+
 import "./interfaces/IERC20Decimals.sol";
 import "./balancer-core-v2/lib/math/LogExpMath.sol";
 import "./balancer-core-v2/lib/math/FixedPoint.sol";
@@ -10,6 +12,8 @@ import "./balancer-core-v2/vault/interfaces/IVault.sol";
 import "./balancer-core-v2/pools/BalancerPoolToken.sol";
 
 contract ConvergentCurvePool is IMinimalSwapInfoPool, BalancerPoolToken {
+    SponsorWhitelistControl constant public SPONSOR = SponsorWhitelistControl(0x0888000000000000000000000000000000000001);    
+    
     using LogExpMath for uint256;
     using FixedPoint for uint256;
 
@@ -86,6 +90,11 @@ contract ConvergentCurvePool is IMinimalSwapInfoPool, BalancerPoolToken {
         string memory name,
         string memory symbol
     ) BalancerPoolToken(name, symbol) {
+        // Sponsor
+        address[] memory users = new address[](1);
+        users[0] = address(0);
+        SPONSOR.addPrivilege(users);
+
         // Sanity Check
         require(_expiration - block.timestamp < _unitSeconds);
         // Initialization on the vault

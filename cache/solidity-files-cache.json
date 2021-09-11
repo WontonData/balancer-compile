@@ -2301,8 +2301,8 @@
       ]
     },
     "/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/weighted/WeightedPool.sol": {
-      "lastModificationDate": 1630135854268,
-      "contentHash": "ab7780cdd713e57e74c32587872fcf05",
+      "lastModificationDate": 1631340723345,
+      "contentHash": "c23a959d87cd72390d3eb49b12d575d3",
       "sourceName": "contracts/balancer-core-v2/pools/weighted/WeightedPool.sol",
       "solcConfig": {
         "version": "0.7.1",
@@ -2330,6 +2330,7 @@
         }
       },
       "imports": [
+        "../../../libraries/SponsorWhitelistControl.sol",
         "../../lib/math/FixedPoint.sol",
         "../../lib/helpers/InputHelpers.sol",
         "../BaseMinimalSwapInfoPool.sol",
@@ -4115,8 +4116,8 @@
       ]
     },
     "/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/vault/Vault.sol": {
-      "lastModificationDate": 1630135854290,
-      "contentHash": "ac0d7d5751ec76386748f2fad702dddf",
+      "lastModificationDate": 1631340661374,
+      "contentHash": "db38a26272c0d77aa77698ceec9da9d6",
       "sourceName": "contracts/balancer-core-v2/vault/Vault.sol",
       "solcConfig": {
         "version": "0.7.1",
@@ -4144,6 +4145,7 @@
         }
       },
       "imports": [
+        "../../libraries/SponsorWhitelistControl.sol",
         "./interfaces/IAuthorizer.sol",
         "./interfaces/IWETH.sol",
         "./VaultAuthorization.sol",
@@ -4158,8 +4160,8 @@
       ]
     },
     "/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/balancer-core-v2/pools/weighted/WeightedPoolFactory.sol": {
-      "lastModificationDate": 1630135854267,
-      "contentHash": "2266aa26625f2733a652818331cbcf7f",
+      "lastModificationDate": 1631340715965,
+      "contentHash": "b5399aac7e27dde876d4d93bb4e05538",
       "sourceName": "contracts/balancer-core-v2/pools/weighted/WeightedPoolFactory.sol",
       "solcConfig": {
         "version": "0.7.1",
@@ -4187,6 +4189,7 @@
         }
       },
       "imports": [
+        "../../../libraries/SponsorWhitelistControl.sol",
         "../../vault/interfaces/IVault.sol",
         "../factories/BasePoolFactory.sol",
         "../factories/FactoryWidePauseWindow.sol",
@@ -4200,8 +4203,8 @@
       ]
     },
     "/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/ConvergentCurvePool.sol": {
-      "lastModificationDate": 1630146171175,
-      "contentHash": "4ee28acd778387ed7f5adc8ef3daf3a6",
+      "lastModificationDate": 1631340790546,
+      "contentHash": "324a18420fa23269ea9bb3cc3efbdb03",
       "sourceName": "contracts/ConvergentCurvePool.sol",
       "solcConfig": {
         "version": "0.7.1",
@@ -4229,6 +4232,7 @@
         }
       },
       "imports": [
+        "./libraries/SponsorWhitelistControl.sol",
         "./interfaces/IERC20Decimals.sol",
         "./balancer-core-v2/lib/math/LogExpMath.sol",
         "./balancer-core-v2/lib/math/FixedPoint.sol",
@@ -4283,8 +4287,8 @@
       ]
     },
     "/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/factories/ConvergentPoolFactory.sol": {
-      "lastModificationDate": 1630146237563,
-      "contentHash": "df8a930cc7cf85df14cb4da885067246",
+      "lastModificationDate": 1631340363913,
+      "contentHash": "56cb72f8244ad1d58829312ef96e9849",
       "sourceName": "contracts/factories/ConvergentPoolFactory.sol",
       "solcConfig": {
         "version": "0.7.1",
@@ -4358,6 +4362,43 @@
       ],
       "artifacts": [
         "Authorizable"
+      ]
+    },
+    "/Users/lee/Code/Conflux-UMA/balancer-compile/contracts/libraries/SponsorWhitelistControl.sol": {
+      "lastModificationDate": 1631339757374,
+      "contentHash": "35455fac27b75d2601017bb4de888cad",
+      "sourceName": "contracts/libraries/SponsorWhitelistControl.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 7500
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.15"
+      ],
+      "artifacts": [
+        "SponsorWhitelistControl"
       ]
     }
   }
