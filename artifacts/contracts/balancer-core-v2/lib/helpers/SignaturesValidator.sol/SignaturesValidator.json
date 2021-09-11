@@ -4,32 +4,6 @@
   "sourceName": "contracts/balancer-core-v2/lib/helpers/SignaturesValidator.sol",
   "abi": [
     {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "c__0x9e5800f1",
-          "type": "bytes32"
-        }
-      ],
-      "name": "c_0x9e5800f1",
-      "outputs": [],
-      "stateMutability": "pure",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "c__0xe68c73e0",
-          "type": "bytes32"
-        }
-      ],
-      "name": "c_0xe68c73e0",
-      "outputs": [],
-      "stateMutability": "pure",
-      "type": "function"
-    },
-    {
       "inputs": [],
       "name": "getDomainSeparator",
       "outputs": [

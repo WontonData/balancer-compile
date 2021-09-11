@@ -4,32 +4,6 @@
   "sourceName": "contracts/balancer-core-v2/vault/AssetTransfersHandler.sol",
   "abi": [
     {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "c__0xdfc7cb74",
-          "type": "bytes32"
-        }
-      ],
-      "name": "c_0xdfc7cb74",
-      "outputs": [],
-      "stateMutability": "pure",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "c__0xf713c778",
-          "type": "bytes32"
-        }
-      ],
-      "name": "c_0xf713c778",
-      "outputs": [],
-      "stateMutability": "pure",
-      "type": "function"
-    },
-    {
       "stateMutability": "payable",
       "type": "receive"
     }

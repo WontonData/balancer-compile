@@ -17,19 +17,6 @@
       "type": "event"
     },
     {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "c__0x5eae7510",
-          "type": "bytes32"
-        }
-      ],
-      "name": "c_0x5eae7510",
-      "outputs": [],
-      "stateMutability": "pure",
-      "type": "function"
-    },
-    {
       "inputs": [],
       "name": "getVault",
       "outputs": [

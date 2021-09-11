@@ -6,32 +6,6 @@
     {
       "inputs": [
         {
-          "internalType": "bytes32",
-          "name": "c__0x07990f2b",
-          "type": "bytes32"
-        }
-      ],
-      "name": "c_0x07990f2b",
-      "outputs": [],
-      "stateMutability": "pure",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "c__0x3694ba53",
-          "type": "bytes32"
-        }
-      ],
-      "name": "c_0x3694ba53",
-      "outputs": [],
-      "stateMutability": "pure",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
           "internalType": "bytes4",
           "name": "selector",
           "type": "bytes4"

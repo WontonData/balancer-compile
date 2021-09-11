@@ -2,21 +2,7 @@
   "_format": "hh-sol-artifact-1",
   "contractName": "ReentrancyGuard",
   "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/ReentrancyGuard.sol",
-  "abi": [
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "c__0xcddb63f5",
-          "type": "bytes32"
-        }
-      ],
-      "name": "c_0xcddb63f5",
-      "outputs": [],
-      "stateMutability": "pure",
-      "type": "function"
-    }
-  ],
+  "abi": [],
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "linkReferences": {},

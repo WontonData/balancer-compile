@@ -2,21 +2,7 @@
   "_format": "hh-sol-artifact-1",
   "contractName": "GeneralPoolsBalance",
   "sourceName": "contracts/balancer-core-v2/vault/balances/GeneralPoolsBalance.sol",
-  "abi": [
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "c__0x1c48be8f",
-          "type": "bytes32"
-        }
-      ],
-      "name": "c_0x1c48be8f",
-      "outputs": [],
-      "stateMutability": "pure",
-      "type": "function"
-    }
-  ],
+  "abi": [],
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "linkReferences": {},

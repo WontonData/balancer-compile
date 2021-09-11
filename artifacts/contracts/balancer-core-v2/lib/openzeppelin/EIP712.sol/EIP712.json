@@ -2,21 +2,7 @@
   "_format": "hh-sol-artifact-1",
   "contractName": "EIP712",
   "sourceName": "contracts/balancer-core-v2/lib/openzeppelin/EIP712.sol",
-  "abi": [
-    {
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "c__0x9e5800f1",
-          "type": "bytes32"
-        }
-      ],
-      "name": "c_0x9e5800f1",
-      "outputs": [],
-      "stateMutability": "pure",
-      "type": "function"
-    }
-  ],
+  "abi": [],
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "linkReferences": {},
